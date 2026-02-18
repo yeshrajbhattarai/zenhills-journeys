@@ -198,7 +198,7 @@ const Index = () => {
               Glimpse of Sikkim 💕
             </h2>
             <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
-              Still don't want to visit??🤧
+              What are you waiting for? we are already Welcoming you..💕
             </p>
           </div>
 
@@ -211,7 +211,7 @@ const Index = () => {
                 className="w-full h-72 object-cover transition-transform duration-500 hover:scale-105"
               />
               {/* <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
-              Still don't want to visit??🤧
+              What are you waiting for?
             </p> */}
             </div>
           ))}
@@ -232,7 +232,7 @@ const Index = () => {
         Visit Our Headquarters 📍
       </h2>
       <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
-        From the peaceful hills of Gangtok to our operational base in Patna — we are always close to you.
+        From the peaceful hills of Gangtok to our operational base in Patna - we are always close to you.
       </p>
     </div>
 
@@ -240,7 +240,7 @@ const Index = () => {
 
       {/* Gangtok HQ */}
       <div>
-        <h3 className="text-xl font-semibold mb-4">Gangtok HQ – Sikkim 🏔</h3>
+        <h3 className="text-xl font-semibold mb-4">Gangtok HQ - Sikkim </h3>
         <div className="rounded-2xl overflow-hidden shadow-zen-lg">
           <iframe
             src="https://www.google.com/maps?q=Bojoghari,Gangtok,Sikkim&output=embed"
@@ -254,7 +254,7 @@ const Index = () => {
 
       {/* Patna Branch */}
       <div>
-        <h3 className="text-xl font-semibold mb-4">Patna Branch – Bihar 🌿</h3>
+        <h3 className="text-xl font-semibold mb-4">Patna Branch - Bihar</h3>
         <div className="rounded-2xl overflow-hidden shadow-zen-lg">
           <iframe
             src="https://www.google.com/maps?q=Exhibition%20Road,Patna,Bihar&output=embed"
