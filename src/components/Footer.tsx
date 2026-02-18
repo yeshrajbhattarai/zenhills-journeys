@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
-import { Mountain, Phone, Mail, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
+import { Mountain, Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-foreground text-primary-foreground">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
@@ -14,78 +16,94 @@ const Footer = () => {
                 Zen<span className="text-accent">Hills</span>
               </span>
             </div>
-            <p className="font-body text-sm text-primary-foreground/70 leading-relaxed">
-              Crafting unforgettable journeys to the world's most breathtaking destinations. Your adventure begins with us.
+
+            <p className="text-sm text-primary-foreground/70 leading-relaxed">
+              Based in the serene landscapes of Sikkim, ZenHills crafts 
+              meaningful journeys through misty valleys, ancient monasteries, 
+              snow-covered peaks, and untouched Himalayan beauty. 
+              Travel with heart. Travel with purpose.
             </p>
-            <div className="flex gap-3 pt-2">
-              <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent/20 transition-colors">
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent/20 transition-colors">
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent/20 transition-colors">
-                <Twitter className="w-4 h-4" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="font-display text-lg font-semibold">Quick Links</h4>
+            <h4 className="font-display text-lg font-semibold">
+              Explore
+            </h4>
+
             <div className="flex flex-col gap-2">
-              {[
-                { label: "Home", to: "/" },
-                { label: "About Us", to: "/about" },
-                { label: "Services", to: "/services" },
-                { label: "Contact", to: "/contact" },
-              ].map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className="font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              <Link
+                to="/"
+                className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/services"
+                className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
+              >
+                Our Trips
+              </Link>
+              <Link
+                to="/contact"
+                className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
+              >
+                Contact
+              </Link>
             </div>
           </div>
 
           {/* Contact */}
           <div className="space-y-4">
-            <h4 className="font-display text-lg font-semibold">Contact Us</h4>
+            <h4 className="font-display text-lg font-semibold">
+              Get in Touch
+            </h4>
+
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <Phone className="w-4 h-4 mt-0.5 text-accent" />
-                <span className="font-body text-sm text-primary-foreground/70">+91 98765 43210</span>
+                <span className="text-sm text-primary-foreground/70">
+                  +91 9474090064
+                </span>
               </div>
+
               <div className="flex items-start gap-3">
                 <Mail className="w-4 h-4 mt-0.5 text-accent" />
-                <span className="font-body text-sm text-primary-foreground/70">hello@zenhills.com</span>
+                <span className="text-sm text-primary-foreground/70">
+                  zenhills20@gmail.com
+                </span>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 mt-0.5 text-accent" />
+                <span className="text-sm text-primary-foreground/70">
+                  Main Branch - Exhibition Road, Patna, Bihar
+                </span>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 text-accent" />
-                <span className="font-body text-sm text-primary-foreground/70">123 Travel Street,<br />Mumbai, India 400001</span>
+                <span className="text-sm text-primary-foreground/70">
+                  Secondary Branch - Bojoghari, Gangtok, Sikkim 
+                </span>
               </div>
             </div>
           </div>
-
-          {/* Hours */}
-          <div className="space-y-4">
-            <h4 className="font-display text-lg font-semibold">Working Hours</h4>
-            <div className="space-y-2 font-body text-sm text-primary-foreground/70">
-              <p>Mon – Fri: 9:00 AM – 7:00 PM</p>
-              <p>Saturday: 10:00 AM – 5:00 PM</p>
-              <p>Sunday: Closed</p>
-            </div>
-          </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-primary-foreground/10 text-center">
-          <p className="font-body text-sm text-primary-foreground/50">
-            © {new Date().getFullYear()} ZenHills Tours & Travel. All rights reserved.
+        {/* Bottom */}
+        <div className="mt-12 pt-6 border-t border-primary-foreground/10 text-center">
+          <p className="text-sm text-primary-foreground/50">
+            © {new Date().getFullYear()} ZenHills Tours & Travel — 
+            Discover Sikkim, Discover Serenity.
           </p>
         </div>
+
       </div>
     </footer>
   );

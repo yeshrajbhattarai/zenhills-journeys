@@ -11,68 +11,59 @@ import tripCity from "@/assets/trip-city.jpg";
 import tripSafari from "@/assets/trip-safari.jpg";
 import tripIsland from "@/assets/trip-island.jpg";
 
+import sikkim1 from "../assets/Gallery/sikkim1.jpg";
+
+import sikkim2 from "../assets/Gallery/sikkim2.jpg";
+import sikkim3 from "../assets/Gallery/sikkim3.jpg";
+import sikkim4 from "../assets/Gallery/sikkim4.jpg";
+import sikkim6 from "../assets/Gallery/sikkim6.jpg";
+import sikkim7 from "../assets/Gallery/sikkim7.jpg";
+
+const galleryImages = [
+  sikkim1,
+  sikkim2,
+  sikkim3,
+  sikkim4,
+  sikkim6,
+  sikkim7,
+];
+
 const trips = [
   {
-    title: "Goa Beach Bliss",
-    location: "Goa, India",
+    title: "Ek jaga se Dusra jaga",
+    location: "Sikkim, India",
     duration: "5 Days / 4 Nights",
-    price: "₹18,999",
+    price: "Rs. 18,999",
     rating: 4.8,
     image: tripBeach,
-    tag: "Bestseller",
   },
   {
     title: "Himalayan Trek",
     location: "Manali, India",
     duration: "7 Days / 6 Nights",
-    price: "₹24,999",
+    price: "Rs. 24,999",
     rating: 4.9,
     image: tripMountain,
-    tag: "Adventure",
   },
   {
     title: "Temple Trail",
     location: "Hampi, India",
     duration: "4 Days / 3 Nights",
-    price: "₹14,499",
+    price: "Rs. 14,499",
     rating: 4.7,
     image: tripTemple,
-    tag: "Heritage",
   },
-  {
-    title: "European Discovery",
-    location: "Paris & Rome",
-    duration: "10 Days / 9 Nights",
-    price: "₹1,49,999",
-    rating: 4.9,
-    image: tripCity,
-    tag: "International",
-  },
-  {
-    title: "African Safari",
-    location: "Kenya",
-    duration: "8 Days / 7 Nights",
-    price: "₹1,89,999",
-    rating: 5.0,
-    image: tripSafari,
-    tag: "Exclusive",
-  },
-  {
-    title: "Maldives Retreat",
-    location: "Maldives",
-    duration: "6 Days / 5 Nights",
-    price: "₹99,999",
-    rating: 4.9,
-    image: tripIsland,
-    tag: "Luxury",
-  },
+
 ];
 
+// // own_________________________________________
+// const galleryPara = [{title: "Himalayan Trek"}]
+
 const stats = [
-  { icon: Users, value: "10,000+", label: "Happy Travellers" },
-  { icon: Globe, value: "50+", label: "Destinations" },
-  { icon: Award, value: "15+", label: "Years Experience" },
-  { icon: Star, value: "4.9", label: "Average Rating" },
+  { icon: Users, value: "100+", label: "Happy Travellers" },
+  { icon: Globe, value: "10+", label: "Destinations" },
+  { icon: Award, value: "1+", label: "Years Experience" },
+  { icon: Star, value: "4.7", label: "Average Rating" },
 ];
 
 const Index = () => {
@@ -88,13 +79,13 @@ const Index = () => {
         </div>
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
           <p className="font-body text-sm md:text-base uppercase tracking-[0.3em] text-primary-foreground/80 mb-4 animate-fade-in">
-            Tours & Travel
+            Welcome to ZenHills Tours & Travel
           </p>
           <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up">
-            Discover the World with ZenHills
+            Discover the Mountains with ZenHills
           </h1>
           <p className="font-body text-base md:text-lg text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            Curated travel experiences that take you beyond the ordinary. Let us craft your perfect escape.
+            Wander through mist-covered valleys, emerald forests, and snow-kissed peaks. ZenHills crafts journeys inspired by Sikkim’s serene landscapes, ancient monasteries, and untouched natural beauty.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
             <Link
@@ -156,9 +147,9 @@ const Index = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                   />
-                  <span className="absolute top-3 left-3 bg-zen-gradient text-primary-foreground text-xs font-body font-semibold px-3 py-1 rounded-full">
+                  {/* <span className="absolute top-3 left-3 bg-zen-gradient text-primary-foreground text-xs font-body font-semibold px-3 py-1 rounded-full">
                     {trip.tag}
-                  </span>
+                  </span> */}
                 </div>
                 <div className="p-5">
                   <h3 className="font-display text-xl font-semibold text-foreground mb-2">{trip.title}</h3>
@@ -195,7 +186,40 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA */}
+
+      {/* Gallery */}
+      <section className="py-20 md:py-28 px-4 bg-background">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12 md:mb-16">
+            <p className="text-sm uppercase tracking-[0.2em] text-primary font-semibold mb-3">
+              Our Gallery
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+              Glimpse of Sikkim 💕
+            </h2>
+            <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
+              Still don't want to visit??🤧
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {galleryImages.map((img, index) => (
+            <div key={index} className="overflow-hidden rounded-xl">
+              <img
+                src={img}
+                alt="Sikkim Gallery"
+                className="w-full h-72 object-cover transition-transform duration-500 hover:scale-105"
+              />
+              {/* <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
+              Still don't want to visit??🤧
+            </p> */}
+            </div>
+          ))}
+        </div>
+
+        </div>
+      </section>
+ {/* CTA */}
       <section className="bg-zen-gradient py-16 md:py-20 px-4">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
@@ -212,7 +236,6 @@ const Index = () => {
           </Link>
         </div>
       </section>
-
       <Footer />
     </div>
   );

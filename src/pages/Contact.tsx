@@ -26,7 +26,7 @@ const Contact = () => {
             Contact Us
           </h1>
           <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Have a question or ready to plan your next adventure? We'd love to hear from you.
+            Have a question or ready to plan your next Sikkim's adventure? We'd love to hear from you.
           </p>
         </div>
       </section>
@@ -43,10 +43,11 @@ const Contact = () => {
               </p>
               <div className="space-y-5 pt-4">
                 {[
-                  { icon: Phone, label: "Phone", value: "+91 98765 43210" },
-                  { icon: Mail, label: "Email", value: "hello@zenhills.com" },
-                  { icon: MapPin, label: "Address", value: "123 Travel Street, Mumbai, India 400001" },
-                  { icon: Clock, label: "Hours", value: "Mon–Fri: 9AM–7PM, Sat: 10AM–5PM" },
+                  { icon: Phone, label: "Phone", value: "+91 9474090064" },
+                  { icon: Mail, label: "Email", value: "zenhills20@gmail.com" },
+                  { icon: MapPin, label: "Main Branch", value: "Exhibition Road, Patna, Bihar" },
+                  { icon: MapPin, label: "Secondary Branch", value: "Bojoghari, Gangtok, Sikkim " },
+                  { icon: Clock, label: "Hours", value: "Always Open for our Customers👐" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-zen-wash flex items-center justify-center flex-shrink-0">
@@ -73,7 +74,6 @@ const Contact = () => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg border border-input bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                      placeholder="Your name"
                     />
                   </div>
                   <div>
@@ -84,7 +84,6 @@ const Contact = () => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg border border-input bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                      placeholder="you@email.com"
                     />
                   </div>
                 </div>
@@ -96,7 +95,6 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg border border-input bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                      placeholder="+91 98765 43210"
                     />
                   </div>
                   <div>
@@ -106,7 +104,6 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg border border-input bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                      placeholder="Trip enquiry"
                     />
                   </div>
                 </div>
@@ -142,7 +139,7 @@ const Contact = () => {
       <section className="h-64 md:h-80 bg-muted flex items-center justify-center">
         <div className="text-center">
           <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
-          <p className="font-body text-muted-foreground text-sm">123 Travel Street, Mumbai, India 400001</p>
+          <p className="font-body text-muted-foreground text-sm">Main Branch - Exhibition Road, Patna, Bihar, <br />Secondary Branch - Bojoghari, Gangtok, Sikkim </p>
         </div>
       </section>
 

@@ -1,14 +1,11 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Plane, Hotel, Map, Camera, Shield, Headphones, Car, Compass } from "lucide-react";
+import { Hotel, Map, Camera, Shield, Headphones, Car} from "lucide-react";
 import { Link } from "react-router-dom";
+import {ArrowRight} from "lucide-react";
 
 const services = [
-  {
-    icon: Plane,
-    title: "Flight Booking",
-    desc: "Best deals on domestic and international flights with flexible booking options and 24/7 support.",
-  },
+
   {
     icon: Hotel,
     title: "Hotel Reservations",
@@ -27,18 +24,14 @@ const services = [
   {
     icon: Car,
     title: "Transport & Transfers",
-    desc: "Comfortable airport transfers, car rentals, and intercity transport arranged seamlessly.",
+    desc: "Comfortable car rentals, and intercity transport arranged seamlessly.",
   },
   {
     icon: Shield,
     title: "Travel Insurance",
     desc: "Comprehensive coverage for medical emergencies, trip cancellations, and baggage protection.",
   },
-  {
-    icon: Compass,
-    title: "Adventure Packages",
-    desc: "Trekking, rafting, diving, safari — adrenaline-pumping adventures curated for thrill-seekers.",
-  },
+
   {
     icon: Headphones,
     title: "24/7 Support",
@@ -105,7 +98,7 @@ const Services = () => {
             to="/contact"
             className="inline-flex items-center gap-2 mt-10 bg-zen-gradient text-primary-foreground px-8 py-3.5 rounded-lg font-body font-semibold text-sm hover:opacity-90 transition-opacity shadow-zen-lg"
           >
-            Get a Free Quote
+            Contact <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
