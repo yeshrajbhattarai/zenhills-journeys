@@ -219,6 +219,59 @@ const Index = () => {
 
         </div>
       </section>
+
+          {/* Our Locations */}
+<section className="py-20 md:py-28 px-4 bg-background">
+  <div className="container mx-auto max-w-6xl">
+
+    <div className="text-center mb-12 md:mb-16">
+      <p className="text-sm uppercase tracking-[0.2em] text-primary font-semibold mb-3">
+        Our Locations
+      </p>
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+        Visit Our Headquarters 📍
+      </h2>
+      <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
+        From the peaceful hills of Gangtok to our operational base in Patna — we are always close to you.
+      </p>
+    </div>
+
+    <div className="space-y-12">
+
+      {/* Gangtok HQ */}
+      <div>
+        <h3 className="text-xl font-semibold mb-4">Gangtok HQ – Sikkim 🏔</h3>
+        <div className="rounded-2xl overflow-hidden shadow-zen-lg">
+          <iframe
+            src="https://www.google.com/maps?q=Bojoghari,Gangtok,Sikkim&output=embed"
+            width="100%"
+            height="350"
+            style={{ border: 0 }}
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+
+      {/* Patna Branch */}
+      <div>
+        <h3 className="text-xl font-semibold mb-4">Patna Branch – Bihar 🌿</h3>
+        <div className="rounded-2xl overflow-hidden shadow-zen-lg">
+          <iframe
+            src="https://www.google.com/maps?q=Exhibition%20Road,Patna,Bihar&output=embed"
+            width="100%"
+            height="350"
+            style={{ border: 0 }}
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
  {/* CTA */}
       <section className="bg-zen-gradient py-16 md:py-20 px-4">
         <div className="container mx-auto max-w-3xl text-center">
