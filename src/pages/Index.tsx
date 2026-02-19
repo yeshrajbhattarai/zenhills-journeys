@@ -7,17 +7,14 @@ import heroBg from "@/assets/hero-bg.jpg";
 import tripBeach from "@/assets/trip-beach.jpg";
 import tripMountain from "@/assets/trip-mountain.jpg";
 import tripTemple from "@/assets/trip-temple.jpg";
-import tripCity from "@/assets/trip-city.jpg";
-import tripSafari from "@/assets/trip-safari.jpg";
-import tripIsland from "@/assets/trip-island.jpg";
 
-import sikkim1 from "../assets/Gallery/sikkim1.jpg";
-
-import sikkim2 from "../assets/Gallery/sikkim2.jpg";
-import sikkim3 from "../assets/Gallery/sikkim3.jpg";
-import sikkim4 from "../assets/Gallery/sikkim4.jpg";
-import sikkim6 from "../assets/Gallery/sikkim6.jpg";
-import sikkim7 from "../assets/Gallery/sikkim7.jpg";
+import sikkim1 from "../assets/Gallery/sikkim1.jpeg";
+import sikkim2 from "../assets/Gallery/sikkim2.jpeg";
+import sikkim3 from "../assets/Gallery/Sikkim3.jpeg";
+import sikkim4 from "../assets/Gallery/Sikkim4.jpeg";
+import sikkim6 from "../assets/Gallery/sikkim6.jpeg";
+import sikkim5 from "../assets/Gallery/sikkim5.jpeg";
+import sikkim7 from "../assets/Gallery/sikkim7.jpeg";
 
 const galleryImages = [
   sikkim1,
@@ -25,36 +22,85 @@ const galleryImages = [
   sikkim3,
   sikkim4,
   sikkim6,
+  sikkim5,
   sikkim7,
 ];
 
 const trips = [
   {
-    title: "Ek jaga se Dusra jaga",
-    location: "Sikkim, India",
+    title: "Sikkim Explorer",
+    location: "Gangtok & North Sikkim, India",
     duration: "5 Days / 4 Nights",
     price: "Rs. 18,999",
-    rating: 4.8,
-    image: tripBeach,
-  },
-  {
-    title: "Himalayan Trek",
-    location: "Manali, India",
-    duration: "7 Days / 6 Nights",
-    price: "Rs. 24,999",
     rating: 4.9,
     image: tripMountain,
   },
   {
-    title: "Temple Trail",
-    location: "Hampi, India",
+    title: "Darjeeling Retreat",
+    location: "Darjeeling, West Bengal",
     duration: "4 Days / 3 Nights",
-    price: "Rs. 14,499",
-    rating: 4.7,
+    price: "Rs. 14,999",
+    rating: 4.8,
     image: tripTemple,
   },
-
+  {
+    title: "Digha Beach Escape",
+    location: "Digha, West Bengal",
+    duration: "3 Days / 2 Nights",
+    price: "Rs. 9,499",
+    rating: 4.6,
+    image: tripBeach,
+  },
+  {
+    title: "Nepal Heritage Tour",
+    location: "Kathmandu & Pokhara, Nepal",
+    duration: "6 Days / 5 Nights",
+    price: "Rs. 29,999",
+    rating: 4.9,
+    image: tripBeach,
+  },
+  {
+    title: "Rajgir Spiritual Trip",
+    location: "Rajgir, Bihar",
+    duration: "2 Days / 1 Night",
+    price: "Rs. 6,999",
+    rating: 4.5,
+    image: tripTemple,
+  },
+  {
+    title: "Deoghar Pilgrimage Tour",
+    location: "Deoghar, Jharkhand",
+    duration: "3 Days / 2 Nights",
+    price: "Rs. 8,499",
+    rating: 4.6,
+    image: tripTemple,
+  },
+  {
+    title: "Uttarakhand Hills Journey",
+    location: "Nainital & Mussoorie, India",
+    duration: "6 Days / 5 Nights",
+    price: "Rs. 21,999",
+    rating: 4.8,
+    image: tripMountain,
+  },
+  {
+    title: "Assam Nature & Wildlife",
+    location: "Kaziranga & Guwahati",
+    duration: "5 Days / 4 Nights",
+    price: "Rs. 19,499",
+    rating: 4.7,
+    image: tripBeach,
+  },
+  {
+    title: "Arunachal Adventure",
+    location: "Tawang & Dirang",
+    duration: "7 Days / 6 Nights",
+    price: "Rs. 27,999",
+    rating: 4.9,
+    image: tripMountain,
+  },
 ];
+
 
 // // own_________________________________________
 // const galleryPara = [{title: "Himalayan Trek"}]
@@ -199,7 +245,7 @@ const Index = () => {
               Glimpse of Sikkim 💕
             </h2>
             <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
-              What are you waiting for? we are already Welcoming you..💕
+              What are you waiting for? we are ready to Welcome you..💕
             </p>
           </div>
 
