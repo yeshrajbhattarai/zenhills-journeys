@@ -39,6 +39,7 @@ const galleryImages = [
 
 const trips = [
   {
+    slug: "sikkim-explorer",
     title: "Sikkim Explorer",
     location: "Gangtok & North Sikkim, India",
     duration: "5 Days / 4 Nights",
@@ -47,6 +48,7 @@ const trips = [
     image: gangtok,
   },
   {
+    slug: "darjeeling-retreat",
     title: "Darjeeling Retreat",
     location: "Darjeeling, West Bengal",
     duration: "4 Days / 3 Nights",
@@ -55,6 +57,7 @@ const trips = [
     image: darjelling,
   },
   {
+    slug: "digha-beach-escape",
     title: "Digha Beach Escape",
     location: "Digha, West Bengal",
     duration: "3 Days / 2 Nights",
@@ -63,6 +66,7 @@ const trips = [
     image: digha,
   },
   {
+    slug: "nepal-heritage-tour",
     title: "Nepal Heritage Tour",
     location: "Kathmandu & Pokhara, Nepal",
     duration: "6 Days / 5 Nights",
@@ -71,6 +75,7 @@ const trips = [
     image: nepal,
   },
   {
+    slug: "rajgir-spiritual-trip",
     title: "Rajgir Spiritual Trip",
     location: "Rajgir, Bihar",
     duration: "2 Days / 1 Night",
@@ -79,6 +84,7 @@ const trips = [
     image: rajgar,
   },
   {
+    slug: "deoghar-pilgrimage-tour",
     title: "Deoghar Pilgrimage Tour",
     location: "Deoghar, Jharkhand",
     duration: "3 Days / 2 Nights",
@@ -87,6 +93,7 @@ const trips = [
     image: jharkhand,
   },
   {
+    slug: "uttarakhand-hills-journey",
     title: "Uttarakhand Hills Journey",
     location: "Nainital & Mussoorie, India",
     duration: "6 Days / 5 Nights",
@@ -95,6 +102,7 @@ const trips = [
     image: nainital,
   },
   {
+    slug: "assam-nature-wildlife",
     title: "Assam Nature & Wildlife",
     location: "Kaziranga & Guwahati",
     duration: "5 Days / 4 Nights",
@@ -103,6 +111,7 @@ const trips = [
     image: kaziranga,
   },
   {
+    slug: "arunachal-adventure",
     title: "Arunachal Adventure",
     location: "Tawang & Dirang",
     duration: "7 Days / 6 Nights",
@@ -231,7 +240,7 @@ const Index = () => {
                       <p className="font-display text-xl font-bold text-primary">{trip.price}</p>
                     </div>
                     <Link
-                      to="/contact"
+                      to={`/detailed/${trip.slug}`}
                       className="bg-zen-gradient text-primary-foreground px-4 py-2 rounded-lg font-body text-sm font-medium hover:opacity-90 transition-opacity"
                     >
                       Enquire

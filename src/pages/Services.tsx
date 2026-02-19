@@ -3,41 +3,49 @@ import Footer from "../components/Footer";
 import { Hotel, Map, Camera, Shield, Headphones, Car} from "lucide-react";
 import { Link } from "react-router-dom";
 import {ArrowRight} from "lucide-react";
-
+// tripcard
+import gangtok from "../assets/Gallery/gangtok.jpeg";
+import digha from "../assets/Gallery/digha.jpg";
+import jharkhand from "../assets/Gallery/jharkhand.jpg";
+import arunachal from "../assets/Gallery/arunachal.jpg";
+import nepal from "../assets/Gallery/nepal.jpg";
+import rajgar from "../assets/Gallery/rajgar.jpg";
+import kaziranga from "../assets/Gallery/kaziranga.jpg";
+import nainital from "../assets/Gallery/nainital.jpg";
+import darjelling from "../assets/Gallery/darjelling.jpg";
 const services = [
-
   {
     icon: Hotel,
-    title: "Hotel Reservations",
-    desc: "Handpicked stays from budget-friendly to luxury resorts — all vetted by our travel experts.",
+    title: "Hotel Booking",
+    desc: "Trusted chain properties and premium stays across all our destinations with comfort and quality assurance.",
   },
   {
     icon: Map,
-    title: "Custom Itineraries",
-    desc: "Personalised travel plans crafted to match your style, interests, and budget down to every detail.",
+    title: "Complete Tour Packages",
+    desc: "Customised travel packages including hotel, transport, sightseeing and local assistance.",
   },
   {
     icon: Camera,
-    title: "Guided Tours",
-    desc: "Expert local guides who bring destinations to life with stories, culture, and hidden gems.",
+    title: "All Destination Coverage",
+    desc: "Sikkim, Darjeeling, Digha, Nepal, Rajgir, Deoghar, Uttarakhand, Assam & Arunachal tours available.",
   },
   {
     icon: Car,
     title: "Transport & Transfers",
-    desc: "Comfortable car rentals, and intercity transport arranged seamlessly.",
+    desc: "Private cars, group transfers and intercity travel arranged safely and comfortably.",
   },
   {
     icon: Shield,
-    title: "Travel Insurance",
-    desc: "Comprehensive coverage for medical emergencies, trip cancellations, and baggage protection.",
+    title: "Corporate Events & Functions",
+    desc: "Corporate tours, business trips, destination events, conferences and group bookings.",
   },
-
   {
     icon: Headphones,
-    title: "24/7 Support",
-    desc: "Round-the-clock assistance before, during, and after your trip. We're always just a call away.",
+    title: "24/7 Customer Support",
+    desc: "Dedicated assistance before, during and after your journey for complete peace of mind.",
   },
 ];
+
 
 const Services = () => {
   return (
