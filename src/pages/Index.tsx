@@ -7,7 +7,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 import tripBeach from "@/assets/trip-beach.jpg";
 import tripMountain from "@/assets/trip-mountain.jpg";
 import tripTemple from "@/assets/trip-temple.jpg";
-
+// gallery
 import sikkim1 from "../assets/Gallery/sikkim1.jpeg";
 import sikkim2 from "../assets/Gallery/sikkim2.jpeg";
 import sikkim3 from "../assets/Gallery/Sikkim3.jpeg";
@@ -15,6 +15,17 @@ import sikkim4 from "../assets/Gallery/Sikkim4.jpeg";
 import sikkim6 from "../assets/Gallery/sikkim6.jpeg";
 import sikkim5 from "../assets/Gallery/sikkim5.jpeg";
 import sikkim7 from "../assets/Gallery/sikkim7.jpeg";
+
+// tripcard
+import gangtok from "../assets/Gallery/gangtok.jpeg";
+import digha from "../assets/Gallery/digha.jpg";
+import jharkhand from "../assets/Gallery/jharkhand.jpg";
+import arunachal from "../assets/Gallery/arunachal.jpg";
+import nepal from "../assets/Gallery/nepal.jpg";
+import rajgar from "../assets/Gallery/rajgar.jpg";
+import kaziranga from "../assets/Gallery/kaziranga.jpg";
+import nainital from "../assets/Gallery/nainital.jpg";
+import darjelling from "../assets/Gallery/darjelling.jpg";
 
 const galleryImages = [
   sikkim1,
@@ -33,7 +44,7 @@ const trips = [
     duration: "5 Days / 4 Nights",
     price: "Rs. 18,999",
     rating: 4.9,
-    image: tripMountain,
+    image: gangtok,
   },
   {
     title: "Darjeeling Retreat",
@@ -41,7 +52,7 @@ const trips = [
     duration: "4 Days / 3 Nights",
     price: "Rs. 14,999",
     rating: 4.8,
-    image: tripTemple,
+    image: darjelling,
   },
   {
     title: "Digha Beach Escape",
@@ -49,7 +60,7 @@ const trips = [
     duration: "3 Days / 2 Nights",
     price: "Rs. 9,499",
     rating: 4.6,
-    image: tripBeach,
+    image: digha,
   },
   {
     title: "Nepal Heritage Tour",
@@ -57,7 +68,7 @@ const trips = [
     duration: "6 Days / 5 Nights",
     price: "Rs. 29,999",
     rating: 4.9,
-    image: tripBeach,
+    image: nepal,
   },
   {
     title: "Rajgir Spiritual Trip",
@@ -65,7 +76,7 @@ const trips = [
     duration: "2 Days / 1 Night",
     price: "Rs. 6,999",
     rating: 4.5,
-    image: tripTemple,
+    image: rajgar,
   },
   {
     title: "Deoghar Pilgrimage Tour",
@@ -73,7 +84,7 @@ const trips = [
     duration: "3 Days / 2 Nights",
     price: "Rs. 8,499",
     rating: 4.6,
-    image: tripTemple,
+    image: jharkhand,
   },
   {
     title: "Uttarakhand Hills Journey",
@@ -81,7 +92,7 @@ const trips = [
     duration: "6 Days / 5 Nights",
     price: "Rs. 21,999",
     rating: 4.8,
-    image: tripMountain,
+    image: nainital,
   },
   {
     title: "Assam Nature & Wildlife",
@@ -89,7 +100,7 @@ const trips = [
     duration: "5 Days / 4 Nights",
     price: "Rs. 19,499",
     rating: 4.7,
-    image: tripBeach,
+    image: kaziranga,
   },
   {
     title: "Arunachal Adventure",
@@ -97,7 +108,7 @@ const trips = [
     duration: "7 Days / 6 Nights",
     price: "Rs. 27,999",
     rating: 4.9,
-    image: tripMountain,
+    image: arunachal,
   },
 ];
 
