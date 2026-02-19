@@ -43,7 +43,7 @@ const Contact = () => {
               </p>
               <div className="space-y-5 pt-4">
                 {[
-                  { icon: Phone, label: "Phone", value: "+91 9474090064" },
+                  { icon: Phone, label: "Phone", value: "+91 9474090064 / 8409970064 " },
                   { icon: Mail, label: "Email", value: "zenhills20@gmail.com" },
                   { icon: MapPin, label: "Main Branch", value: "Exhibition Road, Patna, Bihar" },
                   { icon: MapPin, label: "Secondary Branch", value: "Bojoghari, Gangtok, Sikkim " },
