@@ -10,7 +10,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import TripDetails from "./pages/TripDetails";
 import ScrollToTop from "./components/ScrollToTop";
-
+import AdminEnquiries from "./pages/AdminEnquiries";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -27,6 +27,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/detailed/:slug" element={<TripDetails />} />
+          <Route path="/admin" element={<AdminEnquiries />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
