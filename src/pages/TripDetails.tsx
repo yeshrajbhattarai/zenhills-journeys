@@ -17,123 +17,7 @@ import darjelling from "../assets/Gallery/darjelling.jpg";
 import { useState } from "react";
 
 import Swal from "sweetalert2";
-
-const trips = [
-  {
-  slug: "sikkim-explorer",
-  title: "Sikkim Explorer",
-  location: "Gangtok & North Sikkim, India",
-  duration: "9 Days / 8 Nights",
-  price: "Rs. 18,999",
-  rating: 4.9,
-  image: gangtok,
-  description:
-    "Experience the beauty of Gangtok, Tsomgo Lake, Nathula Pass and North Sikkim including Lachen & Lachung.",
-
-  overview:
-    "This 9-day immersive Himalayan journey is designed for travellers who want both adventure and serenity. From monasteries to high-altitude lakes, every day offers something unforgettable.",
-
-  itinerary: [
-    { day: "Day 1", detail: "Arrival at Gangtok. Check-in and evening MG Marg walk." },
-    { day: "Day 2", detail: "Tsomgo Lake and Nathula Pass excursion." },
-    { day: "Day 3", detail: "Transfer to Lachen with scenic mountain drive." },
-    { day: "Day 4", detail: "Visit Gurudongmar Lake and return." },
-    { day: "Day 5", detail: "Transfer to Lachung." },
-    { day: "Day 6", detail: "Yumthang Valley sightseeing." },
-    { day: "Day 7", detail: "Return to Gangtok." },
-    { day: "Day 8", detail: "Local monastery tour and leisure." },
-    { day: "Day 9", detail: "Departure." }
-  ]
-},
-  {
-    slug: "darjeeling-retreat",
-    title: "Darjeeling Retreat",
-    location: "Darjeeling, West Bengal",
-    duration: "4 Days / 3 Nights",
-    price: "Rs. 14,999",
-    rating: 4.8,
-    image: darjelling,
-    description:
-      "Explore tea gardens, Tiger Hill sunrise, Batasia Loop and Himalayan culture in the Queen of Hills.",
-  },
-  {
-    slug: "digha-beach-escape",
-    title: "Digha Beach Escape",
-    location: "Digha, West Bengal",
-    duration: "3 Days / 2 Nights",
-    price: "Rs. 9,499",
-    rating: 4.6,
-    image: digha,
-    description:
-      "Relax on golden beaches, enjoy seafood and unwind by the Bay of Bengal.",
-  },
-  {
-    slug: "nepal-heritage-tour",
-    title: "Nepal Heritage Tour",
-    location: "Kathmandu & Pokhara, Nepal",
-    duration: "6 Days / 5 Nights",
-    price: "Rs. 29,999",
-    rating: 4.9,
-    image: nepal,
-    description:
-      "Discover ancient temples, Himalayan views and serene lakes in Nepal.",
-  },
-  {
-    slug: "rajgir-spiritual-trip",
-    title: "Rajgir Spiritual Trip",
-    location: "Rajgir, Bihar",
-    duration: "2 Days / 1 Night",
-    price: "Rs. 6,999",
-    rating: 4.5,
-    image: rajgar,
-    description:
-      "Visit Vishwa Shanti Stupa, ropeway and Buddhist pilgrimage sites.",
-  },
-  {
-    slug: "deoghar-pilgrimage-tour",
-    title: "Deoghar Pilgrimage Tour",
-    location: "Deoghar, Jharkhand",
-    duration: "3 Days / 2 Nights",
-    price: "Rs. 8,499",
-    rating: 4.6,
-    image: jharkhand,
-    description:
-      "Sacred Baidyanath Dham pilgrimage with comfortable arrangements.",
-  },
-  {
-    slug: "uttarakhand-hills-journey",
-    title: "Uttarakhand Hills Journey",
-    location: "Nainital & Mussoorie, India",
-    duration: "6 Days / 5 Nights",
-    price: "Rs. 21,999",
-    rating: 4.8,
-    image: nainital,
-    description:
-      "Lakes, hills and serene Himalayan beauty in Uttarakhand.",
-  },
-  {
-    slug: "assam-nature-wildlife",
-    title: "Assam Nature & Wildlife",
-    location: "Kaziranga & Guwahati",
-    duration: "5 Days / 4 Nights",
-    price: "Rs. 19,499",
-    rating: 4.7,
-    image: kaziranga,
-    description:
-      "Wildlife safari in Kaziranga and spiritual visit to Kamakhya Temple.",
-  },
-  {
-    slug: "arunachal-adventure",
-    title: "Arunachal Adventure",
-    location: "Tawang & Dirang",
-    duration: "7 Days / 6 Nights",
-    price: "Rs. 27,999",
-    rating: 4.9,
-    image: arunachal,
-    description:
-      "High-altitude monasteries, snow peaks and breathtaking landscapes.",
-  },
-];
+import trips from "../data/trips";
 
 const TripDetails = () => {
   const { slug } = useParams();
@@ -295,14 +179,20 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
         <h2 className="text-2xl font-bold mb-6">Detailed Itinerary</h2>
 
-        <div className="space-y-4">
-          {trip.itinerary?.map((item, index) => (
-            <div key={index} className="bg-card p-4 rounded-lg shadow">
-              <h3 className="font-semibold text-primary">{item.day}</h3>
-              <p className="text-muted-foreground">{item.detail}</p>
-            </div>
-          ))}
-        </div>
+<div className="space-y-6">
+  {trip.itinerary?.map((item, index) => (
+    <div
+      key={index}
+      className="relative bg-gradient-to-r from-primary/5 to-primary/10 p-5 rounded-xl shadow-md hover:shadow-lg transition-all border-l-4 border-primary"
+    >
+      <div className="flex items-center gap-3 mb-2">
+        <Calendar className="w-5 h-5 text-primary" />
+        <h3 className="font-bold text-primary">{item.day}</h3>
+      </div>
+      <p className="text-muted-foreground">{item.detail}</p>
+    </div>
+  ))}
+</div>
           <div className="bg-card p-6 rounded-xl shadow-zen flex justify-between items-center">
             <div>
               <p className="text-sm text-muted-foreground">Starting From</p>
