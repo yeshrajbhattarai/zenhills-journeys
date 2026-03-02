@@ -154,12 +154,13 @@ const Index = () => {
             Wander through mist-covered valleys, emerald forests, and snow-kissed peaks. ZenHills crafts journeys inspired by Sikkim’s serene landscapes, ancient monasteries, and untouched natural beauty.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-            <Link
-              to="/services"
-              className="inline-flex items-center justify-center gap-2 bg-zen-gradient text-primary-foreground px-8 py-3.5 rounded-lg font-body font-semibold text-sm tracking-wide hover:opacity-90 transition-opacity shadow-zen-lg"
-            >
-              Explore Trips <ArrowRight className="w-4 h-4" />
-            </Link>
+                      <a
+            href="#trips"
+            className="inline-flex items-center justify-center gap-2 bg-zen-gradient text-primary-foreground px-8 py-3.5 rounded-lg font-body font-semibold text-sm tracking-wide hover:opacity-90 transition-opacity shadow-zen-lg"
+          >
+            Explore Trips <ArrowRight className="w-4 h-4" />
+          </a>
+
             <Link
               to="/contact"
               className="inline-flex items-center justify-center gap-2 bg-primary-foreground/15 backdrop-blur-sm text-primary-foreground border border-primary-foreground/30 px-8 py-3.5 rounded-lg font-body font-semibold text-sm tracking-wide hover:bg-primary-foreground/25 transition-colors"
@@ -187,7 +188,7 @@ const Index = () => {
       </section>
 
       {/* Trips */}
-      <section className="py-20 md:py-28 px-4">
+      <section className="py-20 md:py-28 px-4" id = "trips">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12 md:mb-16">
             <p className="font-body text-sm uppercase tracking-[0.2em] text-primary font-semibold mb-3">

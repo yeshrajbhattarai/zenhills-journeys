@@ -147,8 +147,16 @@ const TripDetails = () => {
   //     children: 0,
   //     requests: "",
   //     });
-
-const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const trip = trips.find((t) => t.slug === slug);
+  
+  if (!trip) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <h1 className="text-2xl font-bold">Trip Not Found</h1>
+      </div>
+    );
+  }
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
   const form = e.currentTarget;
@@ -158,8 +166,10 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   const phone = (form.elements.namedItem("phone") as HTMLInputElement).value;
   const date = (form.elements.namedItem("arrivalDate") as HTMLInputElement).value;
   const adults = (form.elements.namedItem("adults") as HTMLInputElement).value;
+  const children = (form.elements.namedItem("children") as HTMLInputElement).value;
+  const requests = (form.elements.namedItem("special_requests") as HTMLTextAreaElement)?.value || "";
 
-  // Basic validations
+  // 🔎 Basic validations
   if (!fullName || !email || !phone || !date || !adults) {
     Swal.fire({
       icon: "error",
@@ -187,27 +197,59 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     return;
   }
 
-  
-  Swal.fire({
-    icon: "success",
-    title: "Booking Submitted!",
-    text: `We will contact you soon regarding ${trip.title}.`,
-    confirmButtonColor: "#0f766e",
-  });
+  try {
+    const response = await fetch(
+      "https://yeshraj.pythonanywhere.com/api/bookings/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          trip_name: trip.title,
+          full_name: fullName,
+          email: email,
+          phone: phone,
+          arrival_date: date,
+          adults: Number(adults),
+          children: Number(children),
+          special_requests: requests,
+        }),
+      }
+    );
 
-  setShowForm(false);
+    if (response.ok) {
+      Swal.fire({
+        icon: "success",
+        title: "Booking Submitted!",
+        text: `We will contact you soon regarding ${trip.title}.`,
+        confirmButtonColor: "#0f766e",
+      });
+
+      setShowForm(false);
+    } else {
+      const errorData = await response.json();
+      console.log("Backend Error:", errorData);
+
+      Swal.fire({
+        icon: "error",
+        title: "Submission Failed",
+        text: "Something went wrong. Please try again.",
+      });
+    }
+  } catch (error) {
+    console.error("Network Error:", error);
+
+    Swal.fire({
+      icon: "error",
+      title: "Network Error",
+      text: "Could not connect to server.",
+    });
+  }
 };
 
 
-  const trip = trips.find((t) => t.slug === slug);
-  
-  if (!trip) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <h1 className="text-2xl font-bold">Trip Not Found</h1>
-      </div>
-    );
-  }
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -355,6 +397,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         <textarea
           placeholder="Special Requests"
           className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary outline-none"
+          name="special_requests"
         />
 
         <button
