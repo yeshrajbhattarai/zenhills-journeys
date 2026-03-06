@@ -1,20 +1,17 @@
-import gangtok    from "../assets/Gallery/gangtok.jpeg";
-import digha      from "../assets/Gallery/digha.jpg";
-import jharkhand  from "../assets/Gallery/jharkhand.jpg";
-import arunachal  from "../assets/Gallery/arunachal.jpg";
-import nepal      from "../assets/Gallery/nepal.jpg";
-import rajgar     from "../assets/Gallery/rajgar.jpg";
-import kaziranga  from "../assets/Gallery/kaziranga.jpg";
-import nainital   from "../assets/Gallery/nainital.jpg";
+import gangtok from "../assets/Gallery/gangtok.jpeg";
+import digha from "../assets/Gallery/digha.jpg";
+import jharkhand from "../assets/Gallery/jharkhand.jpg";
+import arunachal from "../assets/Gallery/arunachal.jpg";
+import nepal from "../assets/Gallery/nepal.jpg";
+import rajgar from "../assets/Gallery/rajgar.jpg";
+import kaziranga from "../assets/Gallery/kaziranga.jpg";
+import nainital from "../assets/Gallery/nainital.jpg";
 import darjelling from "../assets/Gallery/darjelling.jpg";
 
 export interface PackagePricing {
-  budgetLabel: string;
-  budgetPrice: string;
-  standardLabel: string;
-  standardPrice: string;
-  deluxeLabel?: string;
-  deluxePrice?: string;
+  budget: string;
+  standard: string;
+  deluxe?: string;
 }
 
 export interface TripPackage {
@@ -38,462 +35,388 @@ export interface Trip {
   rating: number;
   image: string;
   description: string;
-  hasTouristPlaces?: boolean;
   packages: TripPackage[];
 }
 
 const trips: Trip[] = [
 
-  // ═══════════════════════════════════════════════
+  // ═══════════════════════════════════════════
   // SIKKIM EXPLORER — 3 packages
-  // ═══════════════════════════════════════════════
+  // ═══════════════════════════════════════════
   {
     slug: "sikkim-explorer",
     title: "Sikkim Explorer",
     location: "Gangtok & North Sikkim",
     duration: "3 Nights / 4 Days",
-    price: "Rs. 38,000",
+    price: "Rs. 9,500",
     rating: 4.9,
     image: gangtok,
-    description: "Explore the magic of Sikkim — from Gangtok's MG Marg to the high-altitude Gurudongmar Lake and the legendary Silk Route.",
-    hasTouristPlaces: true,
+    description: "Explore the best of Sikkim — from Gangtok's monasteries and MG Marg to the high-altitude Gurudongmar Lake, Yumthang Valley, and the mystical Silk Route of East Sikkim.",
     packages: [
       {
         id: "sikkim-3n4d",
-        label: "3N / 4D — Gangtok",
+        label: "3N / 4D – Gangtok & Nathula",
         duration: "3 Nights / 4 Days",
         places: ["Gangtok", "Tsomgo Lake", "Nathula Pass"],
-        overview: "A quick yet fulfilling Sikkim getaway covering Gangtok's top sights, the stunning Tsomgo Lake and the historic Nathula Pass on the Indo-China border.",
-        inclusions: ["NJP Pickup & Drop", "Private Vehicle for the tour", "3 Nights Hotel Stay", "Breakfast & Dinner", "All local sightseeing"],
-        exclusions: ["Nathula Pass Permit", "Entry tickets", "Lunch", "Personal expenses"],
+        overview: "A short and perfect Sikkim getaway covering Gangtok's top sightseeing spots and the iconic Tsomgo Lake with Nathula Pass on the Indo-China border.",
+        inclusions: [
+          "NJP Pickup & Drop",
+          "Private Vehicle (Innova / Ertiga)",
+          "3 Nights Hotel Stay",
+          "Breakfast & Dinner",
+          "All local sightseeing",
+        ],
+        exclusions: [
+          "Nathula Pass Permit",
+          "Entry tickets",
+          "Lunch",
+          "Personal expenses",
+        ],
         itinerary: [
           { day: "Day 1 — NJP to Gangtok", detail: "Pickup from NJP Railway Station / Bagdogra Airport. Drive to Gangtok (approx 4–5 hours). Hotel check-in. Evening visit to MG Marg. Dinner and night stay in Gangtok." },
           { day: "Day 2 — Gangtok Local Sightseeing", detail: "Tashi View Point, Ganesh Tok, Hanuman Tok, Rumtek Monastery, Banjhakri Falls. Breakfast & Dinner included. Night stay in Gangtok." },
           { day: "Day 3 — Tsomgo Lake & Nathula Pass", detail: "Excursion to Tsomgo Lake, Nathula Pass (Indo-China Border), Baba Harbhajan Singh Mandir. Return to Gangtok. Dinner and night stay." },
           { day: "Day 4 — Gangtok to NJP Drop", detail: "Breakfast at hotel. Drive back to NJP / Bagdogra. Tour End." },
         ],
-        pricing: { budgetLabel: "Budget Package (4 Pax)", budgetPrice: "₹38,000 – ₹45,000", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹48,000 – ₹55,000" },
+        pricing: {
+          budget: "₹9,500 – ₹11,250 per person",
+          standard: "₹12,000 – ₹13,750 per person",
+        },
       },
       {
         id: "sikkim-6n7d",
-        label: "6N / 7D — Full Sikkim",
+        label: "6N / 7D – Sikkim Complete",
         duration: "6 Nights / 7 Days",
         places: ["Gangtok", "Tsomgo Lake", "Nathula Pass", "Lachen", "Lachung", "Pelling"],
-        overview: "The complete Sikkim circuit — Gangtok, North Sikkim's Gurudongmar Lake and Yumthang Valley, and West Sikkim's scenic Pelling.",
-        inclusions: ["NJP Pickup & Drop", "Private Vehicle (Innova / Ertiga)", "6 Nights Hotel Stay", "Breakfast & Dinner", "North Sikkim Permits", "Sightseeing"],
-        exclusions: ["Nathula Pass Permit", "Entry tickets", "Lunch", "Personal expenses", "Zero Point charges (if applicable)"],
-        itinerary: [
-          { day: "Day 1 — NJP to Gangtok", detail: "Pickup from NJP / Bagdogra Airport. Drive to Gangtok (4–5 hours). Hotel check-in. Evening MG Marg. Night stay in Gangtok." },
-          { day: "Day 2 — Gangtok Local Sightseeing", detail: "Tashi View Point, Ganesh Tok, Hanuman Tok, Rumtek Monastery, Banjhakri Falls. Night stay in Gangtok." },
-          { day: "Day 3 — Tsomgo Lake & Nathula Pass", detail: "Tsomgo Lake, Nathula Pass (Indo-China Border), Baba Harbhajan Singh Mandir. Return to Gangtok. Night stay." },
-          { day: "Day 4 — Gangtok to Lachen", detail: "Drive to Lachen. Enroute: Seven Sisters Waterfalls, Chungthang. Dinner & Night stay in Lachen." },
-          { day: "Day 5 — Gurudongmar Lake to Lachung", detail: "Early morning Gurudongmar Lake (17,100 ft). Drive to Lachung. Dinner & Night stay in Lachung." },
-          { day: "Day 6 — Yumthang Valley to Gangtok", detail: "Yumthang Valley (Valley of Flowers) and Zero Point. Return to Gangtok. Night stay." },
-          { day: "Day 7 — Gangtok → Pelling → NJP", detail: "Drive to Pelling. Pelling Skywalk, Pemayangtse Monastery. Drive back to NJP. Tour End." },
+        overview: "The complete Sikkim circuit — Gangtok, Nathula, North Sikkim (Gurudongmar Lake, Yumthang Valley) and West Sikkim's Pelling with its famous Skywalk and monasteries.",
+        inclusions: [
+          "NJP Pickup & Drop",
+          "Private Vehicle (Innova / Ertiga)",
+          "6 Nights Hotel Stay",
+          "Breakfast & Dinner",
+          "North Sikkim Permits",
+          "Sightseeing as per itinerary",
         ],
-        pricing: { budgetLabel: "Budget Package (4 Pax)", budgetPrice: "₹80,000 – ₹90,000", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹95,000 – ₹1,10,000" },
+        exclusions: [
+          "Nathula Pass Permit",
+          "Entry tickets",
+          "Lunch",
+          "Personal expenses",
+          "Zero Point charges (if applicable)",
+        ],
+        itinerary: [
+          { day: "Day 1 — NJP to Gangtok", detail: "Pickup from NJP / Bagdogra. Drive to Gangtok (4–5 hrs). Hotel check-in. Evening MG Marg. Night stay." },
+          { day: "Day 2 — Gangtok Local Sightseeing", detail: "Tashi View Point, Ganesh Tok, Hanuman Tok, Rumtek Monastery, Banjhakri Falls. Night stay." },
+          { day: "Day 3 — Tsomgo Lake & Nathula Pass", detail: "Tsomgo Lake, Nathula Pass (Indo-China Border), Baba Harbhajan Singh Mandir. Return to Gangtok. Night stay." },
+          { day: "Day 4 — Gangtok to Lachen", detail: "Drive to Lachen (6–7 hrs). En-route: Seven Sisters Waterfalls, Chungthang. Dinner and night stay." },
+          { day: "Day 5 — Gurudongmar Lake to Lachung", detail: "Early morning Gurudongmar Lake (17,100 ft). Drive to Lachung. Night stay." },
+          { day: "Day 6 — Yumthang Valley to Gangtok", detail: "Yumthang Valley (Valley of Flowers). Optional Zero Point. Return to Gangtok. Night stay." },
+          { day: "Day 7 — Gangtok to Pelling to NJP", detail: "Drive to Pelling. Pelling Skywalk, Pemayangtse Monastery. Drive to NJP. Tour End." },
+        ],
+        pricing: {
+          budget: "₹20,000 – ₹22,500 per person",
+          standard: "₹23,750 – ₹27,500 per person",
+        },
       },
       {
-        id: "sikkim-zuluk-4n5d",
-        label: "4N / 5D — Silk Route",
+        id: "sikkim-silkroute-4n5d",
+        label: "4N / 5D – Silk Route (Zuluk)",
         duration: "4 Nights / 5 Days",
         places: ["Gangtok", "Zuluk", "Nathang Valley", "Kupup Lake"],
-        overview: "The hidden gem of Sikkim — the ancient Silk Route through Zuluk's 32 hairpin bends, Nathang Valley's vast meadows and Kupup Lake.",
-        inclusions: ["Hotel Stay in Gangtok", "Homestay Stay in Zuluk", "Breakfast & Dinner", "Private Vehicle", "Driver allowance", "Permit assistance"],
-        exclusions: ["Lunch", "Personal expenses", "Entry tickets", "Any activity not mentioned"],
-        itinerary: [
-          { day: "Day 1 — NJP / Bagdogra to Gangtok", detail: "Pickup from NJP / Bagdogra. Scenic drive along Teesta River to Gangtok. Hotel check-in. Evening MG Marg walk. Night stay in Gangtok." },
-          { day: "Day 2 — Gangtok Local Sightseeing", detail: "Tashi View Point, Ganesh Tok, Hanuman Tok, Enchey Monastery, Flower Exhibition Centre, Banjhakri Falls. Evening free. Night stay in Gangtok." },
-          { day: "Day 3 — Gangtok to Zuluk (Silk Route)", detail: "Drive to Rongli (90 km). Permit formalities. Enroute: Lingtam Village, Padamchen, Thambi View Point (zig-zag road view). Arrive Zuluk. Homestay check-in. Sunset view. Night stay in Zuluk." },
-          { day: "Day 4 — Zuluk → Nathang Valley → Zuluk", detail: "Sunrise from Thambi View Point. Lungthung View Point, Nathang Valley, Old Baba Mandir, Kupup Lake (Elephant Lake), Yak Golf Course. Return to Zuluk. Night stay." },
-          { day: "Day 5 — Zuluk to NJP / Bagdogra", detail: "Breakfast. Drive back. Enroute: Aritar Lake, Mankhim View Point. Drop at NJP / Bagdogra. Tour End." },
+        overview: "The legendary Silk Route of East Sikkim — winding mountain roads, ancient trade routes, high-altitude lakes and the stunning Nathang Valley. A hidden gem for adventure travellers.",
+        inclusions: [
+          "NJP / Bagdogra Pickup & Drop",
+          "Private Vehicle for transfers & sightseeing",
+          "Hotel stay in Gangtok",
+          "Homestay in Zuluk",
+          "Breakfast & Dinner",
+          "Driver allowance",
+          "Permit assistance",
         ],
-        pricing: { budgetLabel: "Budget Package (4 Pax)", budgetPrice: "₹42,000 – ₹50,000", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹55,000 – ₹65,000" },
+        exclusions: [
+          "Lunch",
+          "Entry tickets",
+          "Personal expenses",
+          "Nathula permit (if added)",
+        ],
+        itinerary: [
+          { day: "Day 1 — NJP / Bagdogra to Gangtok", detail: "Pickup and scenic drive along Teesta River to Gangtok (4–5 hrs). Check-in. Evening MG Marg walk. Night stay." },
+          { day: "Day 2 — Gangtok Local Sightseeing", detail: "Tashi View Point, Ganesh Tok, Hanuman Tok, Enchey Monastery, Flower Exhibition Center, Banjhakri Falls. Night stay." },
+          { day: "Day 3 — Gangtok to Zuluk (Silk Route)", detail: "Drive towards Rongli (90 km, 4–5 hrs). Permit formalities at Rongli. En-route: Lingtam Village, Padamchen, Thambi View Point (zig-zag road). Homestay check-in at Zuluk. Sunset view. Night stay." },
+          { day: "Day 4 — Zuluk to Nathang Valley and Back", detail: "Sunrise from Thambi View Point. Lungthung View Point, Nathang Valley, Old Baba Mandir, Kupup Lake (Elephant Lake), Yak Golf Course. Return to Zuluk. Night stay." },
+          { day: "Day 5 — Zuluk to NJP / Bagdogra", detail: "Breakfast. Drive back via Aritar Lake, Mankhim View Point. Drop at NJP / Bagdogra. Tour End." },
+        ],
+        pricing: {
+          budget: "₹9,500 – ₹11,250 per person",
+          standard: "₹12,500 – ₹15,000 per person",
+        },
       },
     ],
   },
 
-  // ═══════════════════════════════════════════════
+  // ═══════════════════════════════════════════
   // SIKKIM + DARJEELING — 2 packages
-  // ═══════════════════════════════════════════════
+  // ═══════════════════════════════════════════
   {
     slug: "darjeeling-retreat",
     title: "Sikkim & Darjeeling Retreat",
     location: "Gangtok, Lachung & Darjeeling",
     duration: "3 Nights / 4 Days",
-    price: "Rs. 28,000",
+    price: "Rs. 7,000",
     rating: 4.8,
     image: darjelling,
-    description: "The best of Sikkim's mountains and Darjeeling's colonial charm — combined into one unforgettable journey.",
-    hasTouristPlaces: false,
+    description: "The perfect combo tour — Sikkim's Himalayan landscapes and the colonial charm of Darjeeling. Tea gardens, Tiger Hill sunrises, mountain railways and high-altitude lakes.",
     packages: [
       {
         id: "darjeeling-3n4d",
-        label: "3N / 4D — Darjeeling",
+        label: "3N / 4D – Darjeeling Only",
         duration: "3 Nights / 4 Days",
         places: ["Darjeeling", "Tiger Hill", "Mirik"],
-        overview: "A perfect short getaway to the Queen of Hills — sunrise over Kanchenjunga from Tiger Hill, Tea Gardens, Ghoom Monastery and scenic Mirik Lake.",
-        inclusions: ["NJP Pickup & Drop", "Private Vehicle", "3 Nights Hotel Stay", "Breakfast & Dinner", "Darjeeling Sightseeing"],
-        exclusions: ["Toy Train ride (optional, extra cost)", "Entry tickets", "Lunch", "Personal expenses"],
+        overview: "A focused Darjeeling getaway — Tiger Hill sunrise, toy train, tea gardens, Himalayan Zoo and a scenic day trip to Mirik lake.",
+        inclusions: [
+          "NJP Pickup & Drop",
+          "Private Vehicle",
+          "3 Nights Hotel Stay",
+          "Breakfast & Dinner",
+          "Darjeeling Sightseeing",
+        ],
+        exclusions: [
+          "Toy Train tickets",
+          "Entry tickets",
+          "Lunch",
+          "Personal expenses",
+        ],
         itinerary: [
-          { day: "Day 1 — NJP to Darjeeling", detail: "Pickup from NJP. Drive to Darjeeling (3–4 hours). Hotel check-in. Evening Mall Road and local market. Night stay." },
-          { day: "Day 2 — Darjeeling Sightseeing", detail: "Early morning Tiger Hill sunrise. Batasia Loop, Ghoom Monastery. After breakfast: Padmaja Naidu Zoo, Himalayan Mountaineering Institute, Tenzing Rock, Tea Garden. Night stay." },
-          { day: "Day 3 — Mirik Excursion", detail: "Drive to Mirik. Sumendu Lake, Orange Gardens, Local Market. Return to Darjeeling. Night stay." },
+          { day: "Day 1 — NJP to Darjeeling", detail: "Pickup from NJP. Drive to Darjeeling (3–4 hrs). Hotel check-in. Evening Mall Road walk. Night stay." },
+          { day: "Day 2 — Darjeeling Sightseeing", detail: "Early morning Tiger Hill (Sunrise view of Kanchenjunga). Batasia Loop, Ghoom Monastery. After breakfast: Padmaja Naidu Himalayan Zoological Park, Himalayan Mountaineering Institute, Tenzing Rock, Tea Garden. Night stay." },
+          { day: "Day 3 — Mirik Excursion", detail: "Drive to Mirik. Sumendu Lake, orange gardens, local market. Return to Darjeeling. Night stay." },
           { day: "Day 4 — Darjeeling to NJP", detail: "Breakfast. Drive back to NJP. Tour End." },
         ],
-        pricing: { budgetLabel: "Budget Package (4 Pax)", budgetPrice: "₹28,000 – ₹35,000", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹38,000 – ₹45,000" },
+        pricing: {
+          budget: "₹7,000 – ₹8,750 per person",
+          standard: "₹9,500 – ₹11,250 per person",
+        },
       },
       {
         id: "sikkim-darjeeling-8n9d",
-        label: "8N / 9D — Sikkim + Darjeeling",
+        label: "8N / 9D – Sikkim & Darjeeling",
         duration: "8 Nights / 9 Days",
         places: ["Gangtok", "Nathula Pass", "Lachen", "Lachung", "Pelling", "Darjeeling"],
-        overview: "The ultimate Northeast journey covering all of Sikkim plus Darjeeling's iconic sunrise and tea gardens.",
-        inclusions: ["NJP Pickup & Drop", "Private Vehicle", "8 Nights Hotel Stay", "Breakfast & Dinner", "North Sikkim Permits", "All Sightseeing"],
-        exclusions: ["Nathula Pass Permit", "Toy Train (optional)", "Lunch", "Entry tickets", "Personal expenses"],
-        itinerary: [
-          { day: "Day 1 — NJP to Gangtok", detail: "Pickup from NJP / Bagdogra. Drive to Gangtok. Hotel check-in. Evening MG Marg. Dinner and night stay." },
-          { day: "Day 2 — Gangtok Local Sightseeing", detail: "Tashi View Point, Ganesh Tok, Hanuman Tok, Rumtek Monastery, Banjhakri Falls. Night stay in Gangtok." },
-          { day: "Day 3 — Tsomgo Lake & Nathula Pass", detail: "Tsomgo Lake, Nathula Pass, Baba Harbhajan Singh Mandir. Return to Gangtok. Night stay." },
-          { day: "Day 4 — Gangtok to Lachen", detail: "Drive to Lachen (6–7 hours). Enroute: Seven Sisters Waterfalls, Chungthang. Night stay in Lachen." },
-          { day: "Day 5 — Gurudongmar Lake → Lachung", detail: "Early morning Gurudongmar Lake. Drive to Lachung. Night stay in Lachung." },
-          { day: "Day 6 — Yumthang Valley → Gangtok", detail: "Yumthang Valley, Optional Zero Point. Return to Gangtok. Night stay." },
-          { day: "Day 7 — Gangtok to Pelling", detail: "Drive to Pelling. Pelling Skywalk, Pemayangtse Monastery, Rabdentse Ruins. Night stay in Pelling." },
-          { day: "Day 8 — Pelling to Darjeeling", detail: "Drive to Darjeeling. Hotel check-in. Evening Mall Road. Night stay." },
-          { day: "Day 9 — Darjeeling Sightseeing → NJP Drop", detail: "Early morning Tiger Hill sunrise. Batasia Loop, Ghoom Monastery. Drop to NJP / Bagdogra. Tour End." },
+        overview: "The ultimate Northeast combo — full Sikkim circuit with North Sikkim, West Sikkim's Pelling and ending with iconic Darjeeling. Perfect for those who want to see it all.",
+        inclusions: [
+          "NJP Pickup & Drop",
+          "Private Vehicle",
+          "8 Nights Hotel Stay",
+          "Breakfast & Dinner",
+          "North Sikkim Permits",
+          "All sightseeing as per itinerary",
         ],
-        pricing: { budgetLabel: "Budget Package (4 Pax)", budgetPrice: "₹1,05,000 – ₹1,15,000", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹1,25,000 – ₹1,40,000", deluxeLabel: "Deluxe Package (4 Pax)", deluxePrice: "₹1,60,000+" },
+        exclusions: [
+          "Nathula Pass Permit",
+          "Toy Train tickets",
+          "Entry tickets",
+          "Lunch",
+          "Personal expenses",
+        ],
+        itinerary: [
+          { day: "Day 1 — NJP to Gangtok", detail: "Pickup from NJP / Bagdogra. Drive to Gangtok (4–5 hrs). Check-in. MG Marg evening. Night stay." },
+          { day: "Day 2 — Gangtok Sightseeing", detail: "Tashi View Point, Ganesh Tok, Hanuman Tok, Rumtek Monastery, Banjhakri Falls. Night stay." },
+          { day: "Day 3 — Tsomgo Lake & Nathula Pass", detail: "Tsomgo Lake, Nathula Pass, Baba Harbhajan Singh Mandir. Return to Gangtok. Night stay." },
+          { day: "Day 4 — Gangtok to Lachen", detail: "Drive to Lachen (6–7 hrs). En-route Seven Sisters Waterfalls, Chungthang. Night stay." },
+          { day: "Day 5 — Gurudongmar Lake to Lachung", detail: "Early morning Gurudongmar Lake. Drive to Lachung. Night stay." },
+          { day: "Day 6 — Yumthang Valley to Gangtok", detail: "Yumthang Valley, Zero Point (optional). Return to Gangtok. Night stay." },
+          { day: "Day 7 — Gangtok to Pelling", detail: "Drive to Pelling. Pelling Skywalk, Pemayangtse Monastery, Rabdentse Ruins. Night stay." },
+          { day: "Day 8 — Pelling to Darjeeling", detail: "Drive to Darjeeling. Check-in. Evening Mall Road. Night stay." },
+          { day: "Day 9 — Darjeeling to NJP", detail: "Tiger Hill sunrise, Batasia Loop, Ghoom Monastery. Drop to NJP. Tour End." },
+        ],
+        pricing: {
+          budget: "₹26,250 – ₹28,750 per person",
+          standard: "₹31,250 – ₹35,000 per person",
+          deluxe: "₹40,000+ per person",
+        },
       },
     ],
   },
 
-  // ═══════════════════════════════════════════════
-  // DIGHA
-  // ═══════════════════════════════════════════════
+  // ─── Remaining trips with single dummy packages ───
+
   {
     slug: "digha-beach-escape",
     title: "Digha Beach Escape",
     location: "Digha, West Bengal",
     duration: "2 Nights / 3 Days",
-    price: "Rs. 9,499",
+    price: "Rs. 3,500",
     rating: 4.6,
     image: digha,
-    description: "A relaxing coastal getaway to Digha's golden beaches with fresh seafood and peaceful sunsets.",
-    hasTouristPlaces: false,
-    packages: [
-      {
-        id: "digha-2n3d",
-        label: "2N / 3D — Digha",
-        duration: "2 Nights / 3 Days",
-        places: ["Old Digha", "New Digha", "Marine Aquarium"],
-        overview: "Unwind on the golden sands of Digha — enjoy the Bay of Bengal, fresh seafood, and the Marine Aquarium.",
-        inclusions: ["Hotel Stay", "Breakfast & Dinner", "Private Vehicle", "Sightseeing"],
-        exclusions: ["Entry tickets", "Lunch", "Personal expenses"],
-        itinerary: [
-          { day: "Day 1", detail: "Arrival at Digha. Check-in. Evening beach relaxation at Old Digha." },
-          { day: "Day 2", detail: "Marine Aquarium visit, New Digha Beach, sunset view." },
-          { day: "Day 3", detail: "Morning beach walk, local seafood market shopping, departure." },
-        ],
-        pricing: { budgetLabel: "Budget Package (4 Pax)", budgetPrice: "₹9,499 – ₹12,000", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹14,000 – ₹18,000" },
-      },
-    ],
+    description: "A relaxing coastal getaway to Digha's golden beaches with fresh seafood and peaceful Bay of Bengal sunsets.",
+    packages: [{
+      id: "digha-2n3d", label: "2N / 3D – Digha Beach", duration: "2 Nights / 3 Days",
+      places: ["Old Digha", "New Digha", "Marine Aquarium"],
+      overview: "Relax by the sea, explore the Marine Aquarium and enjoy fresh seafood and golden sunsets on Digha's famous beaches.",
+      inclusions: ["Kolkata / Howrah Pickup & Drop", "Private Vehicle", "2 Nights Hotel Stay", "Breakfast & Dinner"],
+      exclusions: ["Lunch", "Entry tickets", "Personal expenses"],
+      itinerary: [
+        { day: "Day 1 — Arrival at Digha", detail: "Pickup from Kolkata / Howrah. Drive to Digha (4–5 hrs). Check-in. Evening beach relaxation." },
+        { day: "Day 2 — Digha Sightseeing", detail: "Marine Aquarium, New Digha beach, Chandaneswar Temple. Sunset at Old Digha." },
+        { day: "Day 3 — Departure", detail: "Morning beach walk. Seafood market. Drive back." },
+      ],
+      pricing: { budget: "₹3,500 – ₹4,500 per person", standard: "₹5,000 – ₹6,500 per person" },
+    }],
   },
 
-  // ═══════════════════════════════════════════════
-  // NEPAL — 4 real packages from client
-  // ═══════════════════════════════════════════════
   {
     slug: "nepal-heritage-tour",
     title: "Nepal Heritage Tour",
-    location: "Janakpur, Kathmandu & Pokhara",
-    duration: "3 Nights / 4 Days",
-    price: "₹14,500 / person",
+    location: "Kathmandu & Pokhara",
+    duration: "5 Nights / 6 Days",
+    price: "Rs. 12,500",
     rating: 4.9,
     image: nepal,
-    description: "Discover Nepal's ancient temples, sacred ghats, Himalayan landscapes and the spiritual trail from Janakpur to Pokhara.",
-    hasTouristPlaces: false,
-    packages: [
-      // ── 3N/4D ──
-      {
-        id: "nepal-3n4d",
-        label: "3N / 4D",
-        duration: "3 Nights / 4 Days",
-        places: ["Janakpur", "Kathmandu"],
-        overview: "A short Nepal tour covering the spiritual city of Janakpur — birthplace of Goddess Sita — and Kathmandu's iconic temples and heritage squares.",
-        inclusions: ["Hotel Accommodation", "Daily Breakfast & Dinner", "Private Vehicle for Transfers & Sightseeing", "Driver Allowance", "Parking & Toll Taxes"],
-        exclusions: ["Nepal Visa fees", "Lunch", "Entry tickets", "Personal expenses"],
-        itinerary: [
-          { day: "Day 1 — Jogbani / NJP → Janakpur", detail: "Arrival at Jogbani Border, enter Nepal via Biratnagar. Transfer to Janakpur. Sightseeing: Janaki Mandir, Ram Mandir, Vivah Mandap. Night stay in Janakpur." },
-          { day: "Day 2 — Janakpur → Kathmandu", detail: "Drive to Kathmandu (225 km, 8–9 hrs). Evening visit to Thamel market. Night stay in Kathmandu." },
-          { day: "Day 3 — Kathmandu Sightseeing", detail: "Pashupatinath Temple, Boudhanath Stupa, Swayambhunath Temple (Monkey Temple), Kathmandu Durbar Square. Night stay in Kathmandu." },
-          { day: "Day 4 — Kathmandu → Jogbani / NJP", detail: "Breakfast. Transfer to Jogbani Border / NJP. Tour Ends." },
-        ],
-        pricing: { budgetLabel: "Per Person", budgetPrice: "₹14,500", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹18,000" },
-      },
-      // ── 4N/5D ──
-      {
-        id: "nepal-4n5d",
-        label: "4N / 5D",
-        duration: "4 Nights / 5 Days",
-        places: ["Janakpur", "Kathmandu", "Pokhara"],
-        overview: "Extend the Nepal experience with a day in Pokhara — Phewa Lake boating and the Tal Barahi Temple in the middle of the lake.",
-        inclusions: ["Hotel Accommodation", "Daily Breakfast & Dinner", "Private Vehicle", "Driver Allowance", "Parking & Toll Taxes"],
-        exclusions: ["Nepal Visa fees", "Lunch", "Phewa Lake boating (optional)", "Personal expenses"],
-        itinerary: [
-          { day: "Day 1 — Jogbani / NJP → Janakpur", detail: "Arrival at Jogbani Border. Transfer to Janakpur. Sightseeing: Janaki Mandir, Dhanush Sagar, Ganga Sagar. Night stay in Janakpur." },
-          { day: "Day 2 — Janakpur → Kathmandu", detail: "Drive to Kathmandu. Evening shopping at Thamel. Night stay in Kathmandu." },
-          { day: "Day 3 — Kathmandu Sightseeing", detail: "Pashupatinath Temple, Boudhanath Stupa, Budhanilkantha Temple (reclining Vishnu). Night stay in Kathmandu." },
-          { day: "Day 4 — Kathmandu → Pokhara", detail: "Drive to Pokhara (200 km, 7–8 hrs). Evening: Phewa Lake boating, Tal Barahi Temple, Lakeside Pokhara. Night stay in Pokhara." },
-          { day: "Day 5 — Pokhara → Jogbani / NJP", detail: "Breakfast. Drive back to Jogbani / NJP. Tour Ends." },
-        ],
-        pricing: { budgetLabel: "Per Person", budgetPrice: "₹18,500", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹22,000" },
-      },
-      // ── 5N/6D ──
-      {
-        id: "nepal-5n6d",
-        label: "5N / 6D",
-        duration: "5 Nights / 6 Days",
-        places: ["Janakpur", "Kathmandu", "Pokhara"],
-        overview: "The ideal Nepal tour — Janakpur's spiritual trail, Kathmandu's UNESCO heritage sites and Pokhara's stunning mountain views with a full sightseeing day.",
-        inclusions: ["Hotel Accommodation", "Daily Breakfast & Dinner", "Private Vehicle", "Driver Allowance", "Parking & Toll Taxes"],
-        exclusions: ["Nepal Visa fees", "Lunch", "Entry tickets", "Personal expenses"],
-        itinerary: [
-          { day: "Day 1 — Jogbani / NJP → Janakpur", detail: "Arrival. Sightseeing: Janaki Mandir, Vivah Mandap Janakpur. Night stay in Janakpur." },
-          { day: "Day 2 — Janakpur → Kathmandu", detail: "Drive to Kathmandu. Night stay." },
-          { day: "Day 3 — Kathmandu Sightseeing", detail: "Pashupatinath Temple, Boudhanath Stupa, Swayambhunath Temple. Night stay in Kathmandu." },
-          { day: "Day 4 — Kathmandu → Pokhara", detail: "Drive to Pokhara. Evening: Lakeside Pokhara, Phewa Lake boating. Night stay in Pokhara." },
-          { day: "Day 5 — Pokhara Sightseeing", detail: "Sarangkot sunrise, Davis Falls, Gupteshwor Mahadev Cave, World Peace Pagoda. Night stay in Pokhara." },
-          { day: "Day 6 — Pokhara → Jogbani / NJP", detail: "Breakfast. Drive back to Jogbani / NJP. Tour Ends." },
-        ],
-        pricing: { budgetLabel: "Per Person", budgetPrice: "₹22,500", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹27,000" },
-      },
-      // ── 6N/7D ──
-      {
-        id: "nepal-6n7d",
-        label: "6N / 7D",
-        duration: "6 Nights / 7 Days",
-        places: ["Janakpur", "Kathmandu", "Pokhara"],
-        overview: "The complete Nepal experience — Janakpur, Kathmandu's heritage, two full days in Pokhara with Sarangkot sunrise, mountain museums and the World Peace Pagoda.",
-        inclusions: ["Hotel Accommodation", "Daily Breakfast & Dinner", "Private Vehicle", "Driver Allowance", "Parking & Toll Taxes"],
-        exclusions: ["Nepal Visa fees", "Lunch", "Entry tickets", "Personal expenses"],
-        itinerary: [
-          { day: "Day 1 — Jogbani / NJP → Janakpur", detail: "Arrival. Sightseeing: Janaki Mandir, Ram Mandir. Night stay in Janakpur." },
-          { day: "Day 2 — Janakpur → Kathmandu", detail: "Drive to Kathmandu. Night stay." },
-          { day: "Day 3 — Kathmandu Sightseeing", detail: "Pashupatinath Temple, Boudhanath Stupa, Swayambhunath Temple, Kathmandu Durbar Square. Night stay." },
-          { day: "Day 4 — Kathmandu → Pokhara", detail: "Drive to Pokhara (200 km). Hotel check-in. Night stay in Pokhara." },
-          { day: "Day 5 — Pokhara Sightseeing Day 1", detail: "Sarangkot sunrise, Davis Falls, Gupteshwor Mahadev Cave, International Mountain Museum. Night stay in Pokhara." },
-          { day: "Day 6 — Pokhara Sightseeing Day 2", detail: "World Peace Pagoda, Bindhyabasini Temple, Seti River Gorge. Night stay in Pokhara." },
-          { day: "Day 7 — Pokhara → Jogbani / NJP", detail: "Breakfast. Drive back to Jogbani / NJP. Tour Ends with beautiful memories of Nepal." },
-        ],
-        pricing: { budgetLabel: "Per Person", budgetPrice: "₹26,500", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹32,000" },
-      },
-    ],
+    description: "Discover Nepal's ancient temples, sacred ghats and stunning Himalayan landscapes across Kathmandu and Pokhara.",
+    packages: [{
+      id: "nepal-5n6d", label: "5N / 6D – Nepal Heritage", duration: "5 Nights / 6 Days",
+      places: ["Kathmandu", "Pokhara", "Phewa Lake"],
+      overview: "Spiritual and scenic journey through Nepal's UNESCO heritage sites, sacred temples and the serene lakeside city of Pokhara.",
+      inclusions: ["Airport / NJP Pickup & Drop", "Private Vehicle", "5 Nights Hotel Stay", "Breakfast & Dinner"],
+      exclusions: ["Flight / train to Nepal border", "Visa fees", "Lunch", "Personal expenses"],
+      itinerary: [
+        { day: "Day 1 — Arrival in Kathmandu", detail: "Arrival. Transfer to hotel. Evening Thamel walk." },
+        { day: "Day 2 — Kathmandu Temples", detail: "Pashupatinath Temple, Swayambhunath, Boudhanath Stupa." },
+        { day: "Day 3 — Kathmandu to Pokhara", detail: "Tourist bus to Pokhara. Lakeside evening walk." },
+        { day: "Day 4 — Pokhara Sightseeing", detail: "Sunrise from Sarangkot. Phewa Lake boating. World Peace Pagoda." },
+        { day: "Day 5 — Local Exploration", detail: "Devi's Fall, Gupteshwor Cave, Old Bazaar." },
+        { day: "Day 6 — Departure", detail: "Return to Kathmandu. Shopping. Departure." },
+      ],
+      pricing: { budget: "₹12,500 – ₹15,000 per person", standard: "₹17,500 – ₹20,000 per person" },
+    }],
   },
 
-  // ═══════════════════════════════════════════════
-  // RAJGIR — Updated with real client data
-  // ═══════════════════════════════════════════════
   {
     slug: "rajgir-spiritual-trip",
-    title: "Patna – Nalanda – Rajgir – Bodhgaya",
-    location: "Patna, Nalanda, Rajgir & Bodhgaya",
-    duration: "4 Nights / 5 Days",
-    price: "₹12,000 / person",
-    rating: 4.6,
+    title: "Rajgir Spiritual Trip",
+    location: "Rajgir, Bihar",
+    duration: "1 Night / 2 Days",
+    price: "Rs. 2,500",
+    rating: 4.5,
     image: rajgar,
-    description: "A complete Bihar spiritual circuit — Patna's heritage, Nalanda's ancient university, Rajgir's sacred hills and Bodhgaya's Mahabodhi Temple.",
-    hasTouristPlaces: false,
-    packages: [
-      {
-        id: "rajgir-4n5d",
-        label: "4N / 5D — Bihar Circuit",
-        duration: "4 Nights / 5 Days",
-        places: ["Patna", "Nalanda", "Rajgir", "Bodhgaya"],
-        overview: "Explore Bihar's most sacred and historically significant destinations — from the birthplace of Guru Gobind Singh to the site of Buddha's enlightenment.",
-        inclusions: ["Sedan Vehicle", "Hotel Stay", "Breakfast", "All Sightseeing transfers"],
-        exclusions: ["Dinner", "Lunch", "Entry tickets", "Ropeway tickets", "Personal expenses"],
-        itinerary: [
-          { day: "Day 1 — Patna Arrival", detail: "Arrival at Patna Airport / Railway Station. Transfer to hotel. Patna sightseeing: Takht Sri Patna Sahib (birthplace of Guru Gobind Singh), Golghar, Bihar Museum, Gandhi Maidan. Night stay in Patna." },
-          { day: "Day 2 — Patna → Nalanda → Rajgir", detail: "Drive to Nalanda. Sightseeing: Nalanda University Ruins (5th century Buddhist university), Hiuen Tsang Memorial Hall. Drive to Rajgir. Sightseeing: Vishwa Shanti Stupa, Rajgir Ropeway. Night stay in Rajgir." },
-          { day: "Day 3 — Rajgir Local Sightseeing", detail: "Griddhakuta Hill (Vulture Peak — where Buddha delivered sermons), Hot Springs Rajgir, Cyclopean Wall, Ajatshatru Fort. Night stay in Rajgir." },
-          { day: "Day 4 — Rajgir → Bodhgaya", detail: "Drive to Bodhgaya. Sightseeing: Mahabodhi Temple (UNESCO World Heritage Site), Bodhi Tree, Great Buddha Statue (80 ft), Thai Monastery, Japanese Temple. Night stay in Bodhgaya." },
-          { day: "Day 5 — Bodhgaya → Patna", detail: "Breakfast. Drive back to Patna. Drop at Patna Airport / Railway Station. Tour Ends." },
-        ],
-        pricing: { budgetLabel: "Per Person", budgetPrice: "₹12,000 – ₹14,500", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹16,000 – ₹20,000" },
-      },
-    ],
+    description: "A short peaceful spiritual retreat to Rajgir's sacred Buddhist and Jain heritage sites in Bihar.",
+    packages: [{
+      id: "rajgir-1n2d", label: "1N / 2D – Rajgir Spiritual", duration: "1 Night / 2 Days",
+      places: ["Rajgir", "Vishwa Shanti Stupa", "Hot Springs"],
+      overview: "Experience the spiritual calm of Rajgir — sacred hills that Lord Buddha once walked, the Stupa ropeway and ancient hot springs.",
+      inclusions: ["Patna Pickup & Drop", "Private Vehicle", "1 Night Hotel Stay", "Breakfast & Dinner"],
+      exclusions: ["Ropeway ticket", "Entry tickets", "Lunch", "Personal expenses"],
+      itinerary: [
+        { day: "Day 1 — Arrival & Sightseeing", detail: "Pickup from Patna. Vishwa Shanti Stupa Ropeway, Griddhakuta Hill, Venuvana. Night stay." },
+        { day: "Day 2 — Hot Springs & Departure", detail: "Brahmakund Hot Springs, Jarasandha Akhara. Departure to Patna." },
+      ],
+      pricing: { budget: "₹2,500 – ₹3,500 per person", standard: "₹4,000 – ₹5,000 per person" },
+    }],
   },
 
-  // ═══════════════════════════════════════════════
-  // BUDDHIST CIRCUIT — NEW trip
-  // ═══════════════════════════════════════════════
-  {
-    slug: "buddhist-circuit",
-    title: "International Buddhist Circuit",
-    location: "Patna, Rajgir, Bodhgaya & Varanasi",
-    duration: "5 Nights / 6 Days",
-    price: "₹18,000 / person",
-    rating: 4.9,
-    image: rajgar,
-    description: "A sacred journey through the most important Buddhist pilgrimage sites — Nalanda, Bodhgaya, and Sarnath where Buddha gave his first sermon.",
-    hasTouristPlaces: false,
-    packages: [
-      {
-        id: "buddhist-5n6d",
-        label: "5N / 6D — Buddhist Circuit",
-        duration: "5 Nights / 6 Days",
-        places: ["Patna", "Nalanda", "Rajgir", "Bodhgaya", "Varanasi", "Sarnath"],
-        overview: "This special itinerary is designed for Buddhist pilgrims and heritage travellers — tracing the footsteps of Lord Buddha from Bodhgaya (enlightenment) to Sarnath (first sermon), visiting international monasteries and sacred stupas along the way.",
-        inclusions: ["Hotel Accommodation", "Breakfast & Dinner", "Private Vehicle", "Driver Allowance", "Sightseeing transfers"],
-        exclusions: ["Lunch", "Entry tickets", "Personal expenses", "Ganga Aarti boat (optional)"],
-        itinerary: [
-          { day: "Day 1 — Arrival at Patna", detail: "Pickup from Patna Airport / Railway Station. Patna sightseeing: Takht Sri Patna Sahib (birthplace of Guru Gobind Singh), Golghar (historic British-era granary). Night stay in Patna." },
-          { day: "Day 2 — Patna → Nalanda → Rajgir", detail: "Drive to Nalanda. Sightseeing: Nalanda University Ruins (ancient Buddhist learning centre), Hiuen Tsang Memorial Hall (dedicated to Chinese monk Xuanzang). Drive to Rajgir. Sightseeing: Griddhakuta Hill (where Buddha delivered sermons), Vishwa Shanti Stupa (Peace Pagoda built by Japanese Buddhists). Night stay in Rajgir." },
-          { day: "Day 3 — Rajgir → Bodhgaya", detail: "Drive to Bodh Gaya. Sightseeing: Mahabodhi Temple (UNESCO World Heritage Site — where Buddha attained enlightenment), Bodhi Tree (sacred tree where Buddha meditated), Great Buddha Statue (80-foot statue). Night stay in Bodhgaya." },
-          { day: "Day 4 — Bodhgaya Monastery Tour", detail: "Full day visiting international monasteries: Thai Monastery, Japanese Temple, Royal Bhutan Monastery, Tibetan Monastery Bodhgaya. Night stay in Bodhgaya." },
-          { day: "Day 5 — Bodhgaya → Varanasi", detail: "Drive to Varanasi. Evening visit to Dashashwamedh Ghat for the spectacular Ganga Aarti. Night stay in Varanasi." },
-          { day: "Day 6 — Varanasi → Sarnath → Departure", detail: "Drive to Sarnath — where Buddha gave his first sermon. Sightseeing: Dhamek Stupa, Mulagandha Kuti Vihar, Sarnath Archaeological Museum. Return to Varanasi for departure." },
-        ],
-        pricing: { budgetLabel: "Per Person (Est.)", budgetPrice: "₹18,000 – ₹22,000", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹25,000 – ₹30,000" },
-      },
-    ],
-  },
-
-  // ═══════════════════════════════════════════════
-  // DEOGHAR
-  // ═══════════════════════════════════════════════
   {
     slug: "deoghar-pilgrimage-tour",
     title: "Deoghar Pilgrimage Tour",
     location: "Deoghar, Jharkhand",
     duration: "2 Nights / 3 Days",
-    price: "Rs. 8,499",
+    price: "Rs. 3,200",
     rating: 4.6,
     image: jharkhand,
-    description: "Sacred Baidyanath Dham pilgrimage with comfortable stay and guided temple visits.",
-    hasTouristPlaces: false,
-    packages: [
-      {
-        id: "deoghar-2n3d",
-        label: "2N / 3D — Deoghar",
-        duration: "2 Nights / 3 Days",
-        places: ["Baidyanath Temple", "Nandan Pahar", "Trikut Hills"],
-        overview: "Deoghar is home to one of the 12 Jyotirlingas — a spiritually fulfilling experience.",
-        inclusions: ["Hotel Stay", "Breakfast & Dinner", "Private Vehicle", "Temple visits"],
-        exclusions: ["Puja items", "Lunch", "Personal expenses"],
-        itinerary: [
-          { day: "Day 1", detail: "Arrival in Deoghar. Evening darshan at Baidyanath Temple." },
-          { day: "Day 2", detail: "Nandan Pahar, Trikut Hills, Satsang Ashram." },
-          { day: "Day 3", detail: "Morning temple darshan, departure after breakfast." },
-        ],
-        pricing: { budgetLabel: "Budget Package (4 Pax)", budgetPrice: "₹8,499 – ₹11,000", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹13,000 – ₹16,000" },
-      },
-    ],
+    description: "Sacred Baidyanath Dham pilgrimage — one of the 12 Jyotirlingas — with comfortable stay and guided temple visits.",
+    packages: [{
+      id: "deoghar-2n3d", label: "2N / 3D – Deoghar Pilgrimage", duration: "2 Nights / 3 Days",
+      places: ["Deoghar", "Baidyanath Temple", "Trikut Hills"],
+      overview: "Spiritually fulfilling visit to Baidyanath Dham Jyotirlinga with Trikut Hills and Nandan Pahar sightseeing.",
+      inclusions: ["Patna / Jasidih Pickup & Drop", "Private Vehicle", "2 Nights Hotel Stay", "Breakfast & Dinner"],
+      exclusions: ["Entry tickets", "Puja expenses", "Lunch", "Personal expenses"],
+      itinerary: [
+        { day: "Day 1 — Arrival & Temple Darshan", detail: "Arrival. Check-in. Evening Baidyanath Temple darshan. Night stay." },
+        { day: "Day 2 — Full Day Sightseeing", detail: "Nandan Pahar, Trikut Hills ropeway, Satsang Ashram, Tapovan. Night stay." },
+        { day: "Day 3 — Morning Darshan & Departure", detail: "Early temple darshan. Breakfast. Departure." },
+      ],
+      pricing: { budget: "₹3,200 – ₹4,200 per person", standard: "₹4,800 – ₹6,000 per person" },
+    }],
   },
 
-  // ═══════════════════════════════════════════════
-  // UTTARAKHAND
-  // ═══════════════════════════════════════════════
   {
     slug: "uttarakhand-hills-journey",
     title: "Uttarakhand Hills Journey",
     location: "Nainital & Mussoorie",
     duration: "5 Nights / 6 Days",
-    price: "Rs. 21,999",
+    price: "Rs. 8,500",
     rating: 4.8,
     image: nainital,
-    description: "Explore serene Himalayan lakes, colonial hill stations and lush green valleys.",
-    hasTouristPlaces: false,
-    packages: [
-      {
-        id: "uttarakhand-5n6d",
-        label: "5N / 6D — Nainital & Mussoorie",
-        duration: "5 Nights / 6 Days",
-        places: ["Nainital", "Mussoorie", "Kempty Falls"],
-        overview: "A refreshing escape to Uttarakhand's twin queen hill stations.",
-        inclusions: ["Hotel Stay", "Breakfast & Dinner", "Private Vehicle", "Sightseeing"],
-        exclusions: ["Ropeway tickets", "Lunch", "Personal expenses"],
-        itinerary: [
-          { day: "Day 1", detail: "Arrival in Nainital. Naini Lake boating, Mall Road evening." },
-          { day: "Day 2", detail: "Naina Devi Temple, Snow View Point, Eco Cave Gardens." },
-          { day: "Day 3", detail: "Drive to Mussoorie. Evening Mall Road walk." },
-          { day: "Day 4", detail: "Kempty Falls, Gun Hill Ropeway, Lal Tibba viewpoint." },
-          { day: "Day 5", detail: "Camel's Back Road, Company Garden, local market." },
-          { day: "Day 6", detail: "Departure after breakfast." },
-        ],
-        pricing: { budgetLabel: "Budget Package (4 Pax)", budgetPrice: "₹21,999 – ₹28,000", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹32,000 – ₹40,000" },
-      },
-    ],
+    description: "Explore serene Himalayan lakes, colonial hill stations and lush green valleys across Nainital and Mussoorie.",
+    packages: [{
+      id: "uttarakhand-5n6d", label: "5N / 6D – Nainital & Mussoorie", duration: "5 Nights / 6 Days",
+      places: ["Nainital", "Mussoorie", "Kempty Falls"],
+      overview: "A refreshing escape to Uttarakhand's twin queen hill stations — tranquil Naini Lake and stunning Kempty Falls.",
+      inclusions: ["Delhi / Kathgodam Pickup & Drop", "Private Vehicle", "5 Nights Hotel Stay", "Breakfast & Dinner"],
+      exclusions: ["Ropeway tickets", "Boating charges", "Lunch", "Personal expenses"],
+      itinerary: [
+        { day: "Day 1 — Arrival in Nainital", detail: "Pickup. Drive to Nainital. Naini Lake boating. Mall Road evening." },
+        { day: "Day 2 — Nainital Sightseeing", detail: "Naina Devi Temple, Snow View Point ropeway, Eco Cave Gardens." },
+        { day: "Day 3 — Nainital to Mussoorie", detail: "Drive to Mussoorie. Evening Mall Road." },
+        { day: "Day 4 — Mussoorie Sightseeing", detail: "Kempty Falls, Gun Hill ropeway, Lal Tibba." },
+        { day: "Day 5 — Local Exploration", detail: "Camel's Back Road, Company Garden." },
+        { day: "Day 6 — Departure", detail: "Breakfast. Drive back. Tour End." },
+      ],
+      pricing: { budget: "₹8,500 – ₹10,000 per person", standard: "₹11,500 – ₹13,500 per person" },
+    }],
   },
 
-  // ═══════════════════════════════════════════════
-  // ASSAM
-  // ═══════════════════════════════════════════════
   {
     slug: "assam-nature-wildlife",
     title: "Assam Nature & Wildlife",
     location: "Kaziranga & Guwahati",
     duration: "4 Nights / 5 Days",
-    price: "Rs. 19,499",
+    price: "Rs. 9,500",
     rating: 4.7,
     image: kaziranga,
-    description: "Wildlife safari at Kaziranga National Park and spiritual exploration of Kamakhya Temple.",
-    hasTouristPlaces: false,
-    packages: [
-      {
-        id: "assam-4n5d",
-        label: "4N / 5D — Assam",
-        duration: "4 Nights / 5 Days",
-        places: ["Kaziranga", "Guwahati", "Kamakhya Temple"],
-        overview: "Jeep safari among one-horned rhinos at Kaziranga and the mystical Kamakhya Temple.",
-        inclusions: ["Hotel Stay", "Breakfast & Dinner", "Private Vehicle", "Jeep Safari", "Elephant Safari"],
-        exclusions: ["Entry tickets", "Lunch", "Personal expenses"],
-        itinerary: [
-          { day: "Day 1", detail: "Arrival in Guwahati. Transfer to Kaziranga. Evening briefing." },
-          { day: "Day 2", detail: "Early morning Jeep Safari at Kaziranga (Central Range)." },
-          { day: "Day 3", detail: "Elephant Safari at dawn. Western Range Jeep Safari." },
-          { day: "Day 4", detail: "Return to Guwahati. Kamakhya Temple, Umananda Island." },
-          { day: "Day 5", detail: "Morning Brahmaputra cruise. Departure." },
-        ],
-        pricing: { budgetLabel: "Budget Package (4 Pax)", budgetPrice: "₹19,499 – ₹25,000", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹28,000 – ₹35,000" },
-      },
-    ],
+    description: "Wildlife safari at Kaziranga National Park and spiritual exploration at Kamakhya Temple in Guwahati.",
+    packages: [{
+      id: "assam-4n5d", label: "4N / 5D – Kaziranga & Guwahati", duration: "4 Nights / 5 Days",
+      places: ["Guwahati", "Kaziranga", "Kamakhya Temple"],
+      overview: "Jeep and elephant safaris among one-horned rhinos at Kaziranga, combined with the mystical Kamakhya Temple.",
+      inclusions: ["Guwahati Airport Pickup & Drop", "Private Vehicle", "4 Nights Hotel Stay", "Breakfast & Dinner", "Safari arrangements"],
+      exclusions: ["Safari entry fees", "Camera fees", "Lunch", "Personal expenses"],
+      itinerary: [
+        { day: "Day 1 — Arrival in Guwahati", detail: "Arrival. Transfer to Kaziranga. Check-in. Night stay." },
+        { day: "Day 2 — Kaziranga Jeep Safari", detail: "Early morning Jeep Safari (Central Range). Night stay." },
+        { day: "Day 3 — Elephant Safari", detail: "Dawn Elephant Safari. Western Range Jeep Safari. Night stay." },
+        { day: "Day 4 — Guwahati & Kamakhya", detail: "Return to Guwahati. Kamakhya Temple, Umananda Island. Night stay." },
+        { day: "Day 5 — Departure", detail: "Morning Brahmaputra cruise. Airport drop. Tour End." },
+      ],
+      pricing: { budget: "₹9,500 – ₹11,500 per person", standard: "₹13,000 – ₹15,500 per person" },
+    }],
   },
 
-  // ═══════════════════════════════════════════════
-  // ARUNACHAL
-  // ═══════════════════════════════════════════════
   {
     slug: "arunachal-adventure",
     title: "Arunachal Adventure",
     location: "Tawang & Dirang",
     duration: "6 Nights / 7 Days",
-    price: "Rs. 27,999",
+    price: "Rs. 14,000",
     rating: 4.9,
     image: arunachal,
-    description: "High-altitude monasteries, snow-capped peaks and pristine valleys in Arunachal Pradesh.",
-    hasTouristPlaces: false,
-    packages: [
-      {
-        id: "arunachal-6n7d",
-        label: "6N / 7D — Arunachal",
-        duration: "6 Nights / 7 Days",
-        places: ["Dirang", "Tawang", "Sela Pass", "Bumla Pass"],
-        overview: "A thrilling expedition to Tawang Monastery, Sela Pass and pristine high-altitude lakes.",
-        inclusions: ["Hotel Stay", "Breakfast & Dinner", "Private Vehicle", "Sightseeing", "Permit assistance"],
-        exclusions: ["Bumla Pass permit (if applicable)", "Lunch", "Personal expenses"],
-        itinerary: [
-          { day: "Day 1", detail: "Arrival at Guwahati / Tezpur. Transfer to Dirang." },
-          { day: "Day 2", detail: "Dirang Dzong, Hot Springs, Apple Orchards, Sangti Valley." },
-          { day: "Day 3", detail: "Dirang to Tawang via Sela Pass (13,700 ft). Jaswant Garh War Memorial." },
-          { day: "Day 4", detail: "Tawang Monastery (largest in India), Tawang War Memorial, Urgelling Monastery." },
-          { day: "Day 5", detail: "Madhuri Lake, PT Tso Lake, Bumla Pass (if permitted)." },
-          { day: "Day 6", detail: "Craft Centre, local market. Return drive begins." },
-          { day: "Day 7", detail: "Return to Guwahati / departure." },
-        ],
-        pricing: { budgetLabel: "Budget Package (4 Pax)", budgetPrice: "₹27,999 – ₹35,000", standardLabel: "Standard Package (4 Pax)", standardPrice: "₹40,000 – ₹50,000" },
-      },
-    ],
+    description: "High-altitude monasteries, snow-capped peaks and pristine valleys in the remote frontier of Arunachal Pradesh.",
+    packages: [{
+      id: "arunachal-6n7d", label: "6N / 7D – Tawang & Dirang", duration: "6 Nights / 7 Days",
+      places: ["Dirang", "Sela Pass", "Tawang", "Bumla Pass"],
+      overview: "A thrilling expedition to the land of the rising sun — apple orchards of Dirang, the mighty Sela Pass and ancient Tawang Monastery.",
+      inclusions: ["Guwahati / Tezpur Pickup & Drop", "Private Vehicle", "6 Nights Hotel Stay", "Breakfast & Dinner", "Permit assistance"],
+      exclusions: ["Bumla Pass permit (seasonal)", "Entry tickets", "Lunch", "Personal expenses"],
+      itinerary: [
+        { day: "Day 1 — Arrival to Dirang", detail: "Arrival at Guwahati / Tezpur. Transfer to Dirang. Check-in." },
+        { day: "Day 2 — Dirang Sightseeing", detail: "Dirang Dzong, Hot Springs, Apple Orchards, Sangti Valley." },
+        { day: "Day 3 — Dirang to Tawang via Sela Pass", detail: "Sela Pass (13,700 ft), Jaswant Garh War Memorial. Arrive Tawang." },
+        { day: "Day 4 — Tawang Sightseeing", detail: "Tawang Monastery (largest in India), War Memorial, Urgelling Monastery." },
+        { day: "Day 5 — Bumla Pass & Lakes", detail: "Madhuri Lake, PT Tso Lake, Bumla Pass (if permitted)." },
+        { day: "Day 6 — Local Exploration", detail: "Craft Centre, local market. Return drive begins." },
+        { day: "Day 7 — Return to Guwahati", detail: "Drive to Guwahati. Departure. Tour End." },
+      ],
+      pricing: { budget: "₹14,000 – ₹16,500 per person", standard: "₹18,000 – ₹21,000 per person", deluxe: "₹24,000+ per person" },
+    }],
   },
 ];
 
