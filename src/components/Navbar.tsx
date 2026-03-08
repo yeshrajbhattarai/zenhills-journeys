@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, ChevronDown, Hotel, Home, Info, Briefcase, Headphones, Mail } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, Hotel, Home, Info, Briefcase, Headphones, Mail, Sparkles } from "lucide-react";
 import trips from "../data/trips";
 
 const Navbar = () => {
@@ -45,7 +45,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* ── Entire header: topbar + navbar as ONE fixed block ── */}
       <header className="fixed top-0 left-0 right-0 z-50">
 
         {/* Top bar */}
@@ -59,7 +58,7 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Main navbar — sits directly below topbar, no gap */}
+        {/* Main navbar */}
         <nav className="bg-card/90 backdrop-blur-lg border-b border-border">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16 md:h-[68px]">
@@ -72,8 +71,8 @@ const Navbar = () => {
                   className="h-12 w-auto transition-transform group-hover:scale-105"
                 />
                 <span className="font-display text-xl font-bold">
-                ZenHills<span className="text-accent">Journeys</span>
-              </span>
+                  ZenHills<span className="text-accent">Journeys</span>
+                </span>
               </Link>
 
               {/* Desktop Nav */}
@@ -85,6 +84,10 @@ const Navbar = () => {
 
                 <Link to="/about" className={linkClass("/about")}>
                   <Info className="w-3.5 h-3.5" /> About
+                </Link>
+
+                <Link to="/events" className={linkClass("/events")}>
+                  <Sparkles className="w-3.5 h-3.5" /> Events
                 </Link>
 
                 {/* Packages Dropdown */}
@@ -100,35 +103,21 @@ const Navbar = () => {
                   {packagesOpen && (
                     <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-card rounded-xl shadow-zen-lg border border-border overflow-hidden animate-fade-in" style={{ width: "520px" }}>
                       <div className="py-2 grid grid-cols-2 divide-x divide-border">
-                        {/* Column 1 */}
                         <div>
                           {trips.slice(0, Math.ceil(trips.length / 2)).map((trip) => (
-                            <Link
-                              key={trip.slug}
-                              to={`/detailed/${trip.slug}`}
-                              onClick={() => setPackagesOpen(false)}
-                              className="block px-4 py-2.5 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
-                            >
+                            <Link key={trip.slug} to={`/detailed/${trip.slug}`} onClick={() => setPackagesOpen(false)}
+                              className="block px-4 py-2.5 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors">
                               <span className="font-medium">{trip.title}</span>
-                              <span className="block text-xs text-muted-foreground mt-0.5">
-                                {trip.location} · {trip.duration}
-                              </span>
+                              <span className="block text-xs text-muted-foreground mt-0.5">{trip.location} · {trip.duration}</span>
                             </Link>
                           ))}
                         </div>
-                        {/* Column 2 */}
                         <div>
                           {trips.slice(Math.ceil(trips.length / 2)).map((trip) => (
-                            <Link
-                              key={trip.slug}
-                              to={`/detailed/${trip.slug}`}
-                              onClick={() => setPackagesOpen(false)}
-                              className="block px-4 py-2.5 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
-                            >
+                            <Link key={trip.slug} to={`/detailed/${trip.slug}`} onClick={() => setPackagesOpen(false)}
+                              className="block px-4 py-2.5 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors">
                               <span className="font-medium">{trip.title}</span>
-                              <span className="block text-xs text-muted-foreground mt-0.5">
-                                {trip.location} · {trip.duration}
-                              </span>
+                              <span className="block text-xs text-muted-foreground mt-0.5">{trip.location} · {trip.duration}</span>
                             </Link>
                           ))}
                         </div>
@@ -155,11 +144,8 @@ const Navbar = () => {
                   {hotelsOpen && (
                     <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 bg-card rounded-xl shadow-zen-lg border border-border overflow-hidden animate-fade-in">
                       <div className="py-2">
-                        <Link
-                          to="/hotels"
-                          onClick={() => setHotelsOpen(false)}
-                          className="flex items-center gap-3 px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
-                        >
+                        <Link to="/hotels" onClick={() => setHotelsOpen(false)}
+                          className="flex items-center gap-3 px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors">
                           <Hotel className="w-4 h-4 text-primary flex-shrink-0" />
                           <div>
                             <span className="font-medium block">Hotels in Sikkim</span>
@@ -182,8 +168,6 @@ const Navbar = () => {
                   <Mail className="w-3.5 h-3.5" /> Contact
                 </Link>
 
-                {/* <Link to="/admin" className={linkClass("/admin")}>Admin</Link> */}
-
               </div>
 
               {/* Mobile Toggle */}
@@ -193,7 +177,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile Menu */}
+          {/* ── Mobile Menu ── */}
           {open && (
             <div className="md:hidden bg-card border-t border-border animate-fade-in">
               <div className="px-4 py-4 space-y-1">
@@ -206,12 +190,15 @@ const Navbar = () => {
                   <Info className="w-4 h-4" /> About
                 </Link>
 
+                {/* ✅ Events added to mobile */}
+                <Link to="/events" onClick={() => setOpen(false)} className={`flex items-center gap-2 py-2 font-body text-base font-medium hover:text-primary ${isActive("/events") ? "text-primary" : "text-muted-foreground"}`}>
+                  <Sparkles className="w-4 h-4" /> Events
+                </Link>
+
                 {/* Mobile Packages */}
                 <div>
                   <button onClick={() => setMobilePackagesOpen(!mobilePackagesOpen)} className="flex items-center justify-between w-full py-2 font-body text-base font-medium text-muted-foreground hover:text-primary">
-                    <span className="flex items-center gap-2">
-                      <Briefcase className="w-4 h-4" /> Packages
-                    </span>
+                    <span className="flex items-center gap-2"><Briefcase className="w-4 h-4" /> Packages</span>
                     <ChevronDown className={`w-4 h-4 transition-transform ${mobilePackagesOpen ? "rotate-180" : ""}`} />
                   </button>
                   {mobilePackagesOpen && (
@@ -228,9 +215,7 @@ const Navbar = () => {
                 {/* Mobile Hotels */}
                 <div>
                   <button onClick={() => setMobileHotelsOpen(!mobileHotelsOpen)} className="flex items-center justify-between w-full py-2 font-body text-base font-medium text-muted-foreground hover:text-primary">
-                    <span className="flex items-center gap-2">
-                      <Hotel className="w-4 h-4" /> Our Hotels
-                    </span>
+                    <span className="flex items-center gap-2"><Hotel className="w-4 h-4" /> Our Hotels</span>
                     <ChevronDown className={`w-4 h-4 transition-transform ${mobileHotelsOpen ? "rotate-180" : ""}`} />
                   </button>
                   {mobileHotelsOpen && (
@@ -249,17 +234,13 @@ const Navbar = () => {
                   <Mail className="w-4 h-4" /> Contact
                 </Link>
 
-                <Link to="/admin" onClick={() => setOpen(false)} className={`flex items-center gap-2 py-2 font-body text-base font-medium hover:text-primary ${isActive("/admin") ? "text-primary" : "text-muted-foreground"}`}>
-                  Admin
-                </Link>
-
               </div>
             </div>
           )}
         </nav>
       </header>
 
-      {/* ── Spacer: topbar (~34px) + navbar (~68px) = 102px total ── */}
+      {/* Spacer */}
       <div className="h-[102px]" />
     </>
   );

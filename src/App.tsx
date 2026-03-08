@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 import TripDetails from "./pages/TripDetails";
 import ScrollToTop from "./components/ScrollToTop";
 import AdminEnquiries from "./pages/AdminEnquiries";
+import Events from "./pages/Events";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/trips" element={<Trips />} />
           <Route path="/detailed/:slug" element={<TripDetails />} />
           <Route path="/admin" element={<AdminEnquiries />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
