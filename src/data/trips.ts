@@ -1,14 +1,15 @@
-import gangtok from "../assets/Gallery/gangtok.jpeg";
-import digha from "../assets/Gallery/digha.jpg";
-import jharkhand from "../assets/Gallery/jharkhand.jpg";
-import arunachal from "../assets/Gallery/arunachal.jpg";
-import nepal from "../assets/Gallery/nepal.jpg";
-import rajgar from "../assets/Gallery/rajgar.jpg";
-import kaziranga from "../assets/Gallery/kaziranga.jpg";
-import nainital from "../assets/Gallery/nainital.jpg";
-import darjelling from "../assets/Gallery/darjelling.jpg";
-import kashmir from "../assets/Gallery/kashmir.jpg";
-import bhutan from "../assets/Gallery/bhutan.jpg";
+// ─── Cloudinary image URLs (no imports needed for external URLs) ───────────
+const gangtok    = "https://res.cloudinary.com/du2tt2zqw/image/upload/q_auto,f_auto/v1773032257/gangtok_zj18en.jpg";
+const digha      = "https://res.cloudinary.com/du2tt2zqw/image/upload/q_auto,f_auto/v1773032573/pexels-krishclicknature-13308467_folofw.jpg";
+const jharkhand  = "https://res.cloudinary.com/du2tt2zqw/image/upload/q_auto,f_auto/v1773032253/jharkhand_yfzvlh.jpg";
+const arunachal  = "https://res.cloudinary.com/du2tt2zqw/image/upload/q_auto,f_auto/v1773032245/arunachal_rxw1aj.jpg";
+const nepal      = "https://res.cloudinary.com/du2tt2zqw/image/upload/q_auto,f_auto/v1773032261/nepal_wqn54c.jpg";
+const rajgar     = "https://res.cloudinary.com/du2tt2zqw/image/upload/q_auto,f_auto/v1773032258/rajgar_dciwgb.jpg";
+const kaziranga  = "https://res.cloudinary.com/du2tt2zqw/image/upload/q_auto,f_auto/v1773032256/kaziranga_rlm9sw.jpg";
+const nainital   = "https://res.cloudinary.com/du2tt2zqw/image/upload/q_auto,f_auto/v1773032257/nainital_uozu19.jpg";
+const darjelling = "https://res.cloudinary.com/du2tt2zqw/image/upload/q_auto,f_auto/v1773032632/Darjeeling-Tourist-Place_cpxksa.webp";
+const kashmir    = "https://res.cloudinary.com/du2tt2zqw/image/upload/q_auto,f_auto/v1773032261/kashmir_yuzxun.jpg";
+const bhutan     = "https://res.cloudinary.com/du2tt2zqw/image/upload/q_auto,f_auto/v1773032254/bhutan_utzame.jpg";
 
 
 export interface PackagePricing {

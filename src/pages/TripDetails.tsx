@@ -117,7 +117,7 @@ const TripDetails = () => {
       });
 
       if (response.ok) {
-        Swal.fire({ icon: "success", title: "Booking Submitted!", text: `We'll contact you soon for ${trip.title}.`, confirmButtonColor: "#0f766e" });
+        Swal.fire({ icon: "success", title: "Booking Submitted!", text: `We'll contact you soon for ${trip.title}. Please check your mail/Spam folder for more details.`, confirmButtonColor: "#0f766e" });
         setShowForm(false);
       } else {
         Swal.fire({ icon: "error", title: "Submission Failed", text: "Something went wrong. Please try again." });

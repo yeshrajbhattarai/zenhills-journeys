@@ -10,7 +10,6 @@ import DevCard from "../components/DevCard";
 
 import trips from "../data/trips";
 
-import heroBg   from "@/assets/hero-bg.jpg";
 import sikkim1  from "../assets/Gallery/sikkim1.jpeg";
 import sikkim2  from "../assets/Gallery/sikkim2.jpeg";
 import sikkim3  from "../assets/Gallery/Sikkim3.jpeg";
@@ -18,18 +17,21 @@ import sikkim4  from "../assets/Gallery/Sikkim4.jpeg";
 import sikkim5  from "../assets/Gallery/sikkim5.jpeg";
 import sikkim6  from "../assets/Gallery/sikkim6.jpeg";
 import sikkim7  from "../assets/Gallery/sikkim7.jpeg";
-import sikkim8  from "../assets/Gallery/sikkim8.jpg";
-import sikkim9  from "../assets/Gallery/sikkim9.jpg";
-import sikkim10 from "../assets/Gallery/sikkim10.jpg";
-import sikkim11 from "../assets/Gallery/sikkim11.jpg";
-import sikkim12 from "../assets/Gallery/sikkim12.jpg";
+
+const sikkim9  = "https://res.cloudinary.com/du2tt2zqw/image/upload/v1773032249/sikkim9_ywbdsf.jpg";
+const sikkim8  = "https://res.cloudinary.com/du2tt2zqw/image/upload/v1773032253/sikkim8_g4gaw6.jpg";
+const sikkim10 = "https://res.cloudinary.com/du2tt2zqw/image/upload/v1773032251/sikkim10_nx2cb1.jpg";
+const sikkim11 = "https://res.cloudinary.com/du2tt2zqw/image/upload/v1773032255/westsikkim_sremzz.jpg";
+const sikkim12 = "https://res.cloudinary.com/du2tt2zqw/image/upload/v1773032254/sikkim12_jmk0wn.jpg";
+const sikkim13 = "https://res.cloudinary.com/du2tt2zqw/image/upload/v1773032261/nepal_wqn54c.jpg";
+
 
 const heroSlides = [
-  { image: sikkim8,  label: "Silk Route" },
-  { image: sikkim9,  label: "Himalayan Serenity" },
+  { image: sikkim13,  label: "Nepal" },
   { image: sikkim10, label: "Mountain Trails" },
   { image: sikkim11, label: "North, Sikkim" },
-  { image: sikkim12, label: "North Sikkim" },
+  { image: sikkim9, label: "Himalayan Serenity" },
+  { image: sikkim12, label: "North, Sikkim" },
 ];
 
 
