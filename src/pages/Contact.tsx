@@ -1,7 +1,7 @@
   import { useState } from "react";
   import Navbar from "../components/Navbar";
   import Footer from "../components/Footer";
-  import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+  import { Phone, Mail, MapPin, Clock, Send, User } from "lucide-react";
 
   const Contact = () => {
     const [formData, setFormData] = useState({
@@ -76,8 +76,10 @@
                 <p className="font-body text-muted-foreground leading-relaxed">
                   Whether you need help choosing a destination or want a custom itinerary, our travel experts are here to assist you.
                 </p>
+
                 <div className="space-y-5 pt-4">
                   {[
+                    { icon: User, label: "Contact Person", value: "Chandan Singh" },
                     { icon: Phone, label: "Phone", value: "+91 9474090064 / 8409970064 " },
                     { icon: Mail, label: "Email", value: "zenhills53@gmail.com" },
                     { icon: MapPin, label: "Main Branch", value: "Exhibition Road, Patna, Bihar" },
