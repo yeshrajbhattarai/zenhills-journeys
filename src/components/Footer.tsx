@@ -66,7 +66,7 @@ const Footer = () => {
           {/* Contact */}
           <div className="space-y-4">
             <h4 className="font-display text-lg font-semibold">
-              Get in Touch
+              Get in Touch (Chandan Singh)
             </h4>
 
             <div className="space-y-3">
